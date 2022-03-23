@@ -16,8 +16,11 @@ list-style-type: none;
 h1,h2{
     font-size: 1.5em;
 }
+a{
+    text-decoration: none;
+}
 
-//Valeur//
+//Variables//
 
 $color-backgnd-primary: #fff;
 $color-backgnd-secondary: #f6f6f6;
@@ -25,6 +28,10 @@ $color-backgnd-tertiary: #353535;
 $color-backgnd-quaternary: #eaeaea;
 $color-font-primary: #000;
 $color-font-secondary: #fff;
+$color-font-tertiary:#7e7e7e;
+$color-primary: #9356DC;
+$color-secondary: #FF79DA;
+$color-tertiary: #99E2D0;
 
 
 //Placeholder//
@@ -60,7 +67,7 @@ header{
     @extend %flex-center;
     height: 50px;
     background-color: $color-backgnd-quaternary;
-    box-shadow: inset 0px 3px 3px #cfcfcf;
+    box-shadow: inset 0px 3px 3px darken($color-backgnd-quaternary, 10%);
     &__txt{
         font-size: 1em;
         position: relative;
@@ -78,6 +85,16 @@ header{
     @extend %flex-column;
     background-color: $color-backgnd-secondary;
     padding: 44px 5%;
+    a{
+        @extend %flex-center;
+        color: $color-font-secondary;
+        background: linear-gradient(to right bottom, $color-secondary, $color-primary);
+        box-shadow: 0px 4px 8px darken($color-backgnd-secondary,25%);
+        height: 50px;
+        padding: 10px 22px;
+        margin: 13px 0;
+        border-radius: 25px;
+    }
     p{
         font-size: 1.2em;
         font-weight: 300;
@@ -92,13 +109,50 @@ header{
     @extend %flex-column;
     background-color: $color-backgnd-primary;
     padding: 44px 5%;
+    h2{
+     width: 100%;
+     max-width: 400px;
+    }
 }
 
 .functioning__list{
     margin: 33px 0 0 0 ;
+    width: 100%;
+    max-width: 400px;
     li{
-        margin: 0 0 25px 0 ;
+        @extend %flex-center;
+        position: relative;
+        background-color: $color-backgnd-secondary;
+        height: 72px;
+        margin: 0 0 25px 12px ;
+        border-radius: 12px;
+        box-shadow: 0px 6px 12px darken($color-backgnd-primary,15%);
     }
+    h3{
+        flex:1;
+        font-size: 1em;
+        font-weight: 400;
+    }
+}
+
+.functioning__list__puce{
+    @extend %flex-center;
+    position: absolute;
+    left: -12px;
+    background-color: $color-primary;
+    color: $color-font-secondary;
+    width: 24px;
+    height: 24px;
+    border-radius: 12px;
+    font-size: 14px;
+}
+
+.functioning__list__icon{
+    @extend %flex-center;
+    position: relative;
+    left: 12px;
+    width: 23%;
+    color: $color-font-tertiary;
 }
 
 // Restaurants section //
@@ -108,16 +162,50 @@ header{
     @extend %flex-column;
     background-color: $color-backgnd-secondary;
     padding: 44px 5%;
+    h2{
+        width: 100%;
+        max-width: 400px;
+       }
+    ul{
+        width: 100%;
+        max-width: 400px;
+        margin: 10px 0;
+    }
 }
 .restaurants-card{
     margin: 9px 0;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px darken($color-backgnd-secondary,10%);
     img{
         height: 174px;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 15px 15px 0 0;
     }
 }
-.restaurants-card-infos{
+.restaurants-card__infos{
     background-color: $color-backgnd-primary;
+    position: relative;
     height: 77px;
+    width: 100%;
+    padding: 20px 14px;
+    border-radius: 0 0 15px 15px;
+    h3{
+        font-size: 1.1em;
+    }
+    p{
+        font-size: 1.1em;
+        font-weight: 300;
+    }
+    a{
+        position: absolute;
+        right: 24px;
+        top: 24px;
+        font-size: 20px;
+        color: $color-backgnd-primary;
+        text-shadow: 0px 1px $color-font-primary, 0px -1px $color-font-primary, -1px 0px $color-font-primary, 1px 0px $color-font-primary;
+    }
 }
 
 // Footer //
@@ -129,5 +217,8 @@ footer{
     padding: 25px 6%;
     h2{
         font-family: 'Shrikhand', cursive;
+    }
+    li{
+        margin:9px 0;
     }
 }
