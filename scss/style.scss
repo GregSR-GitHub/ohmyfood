@@ -32,6 +32,8 @@ $color-font-tertiary:#7e7e7e;
 $color-primary: #9356DC;
 $color-secondary: #FF79DA;
 $color-tertiary: #99E2D0;
+$color-primary-lighten: lighten($color-primary, 5%);
+$color-secondary-lighten: lighten($color-secondary, 5%);
 
 
 //Placeholder//
@@ -48,6 +50,32 @@ $color-tertiary: #99E2D0;
 }
 
 //Mixin//
+
+@mixin btn($padding-btn) {
+
+    color: $color-font-secondary;
+    background: linear-gradient(to right bottom, $color-secondary, $color-primary);
+    box-shadow: 0px 4px 8px darken($color-backgnd-secondary,25%);
+    height: 50px;
+    padding: 10px $padding-btn;
+    margin: 13px 0;
+    border-radius: 25px;
+    transition: box-shadow 300ms;
+    transition: margin 100ms;
+    &:hover{
+        margin: 12px 0 14px 0;
+        box-shadow: 0px 4px 8px darken($color-backgnd-secondary,50%);
+        background:  linear-gradient(to right bottom, $color-secondary-lighten, $color-primary-lighten);
+        border-bottom: 2px  $color-primary solid;
+    }
+    &:active{
+        margin: 13px 0 13px 0;
+        box-shadow: 0px 4px 8px darken($color-backgnd-secondary,35%);
+        background:  linear-gradient(to right bottom, $color-secondary-lighten, $color-primary-lighten);
+        border-bottom: 1px  $color-primary solid;
+    }
+    
+}
 
 //Header//
 
@@ -87,13 +115,7 @@ header{
     padding: 44px 5%;
     a{
         @extend %flex-center;
-        color: $color-font-secondary;
-        background: linear-gradient(to right bottom, $color-secondary, $color-primary);
-        box-shadow: 0px 4px 8px darken($color-backgnd-secondary,25%);
-        height: 50px;
-        padding: 10px 22px;
-        margin: 13px 0;
-        border-radius: 25px;
+        @include btn(22px);
     }
     p{
         font-size: 1.2em;
@@ -173,6 +195,7 @@ header{
     }
 }
 .restaurants-card{
+    @extend %flex-column;
     margin: 9px 0;
     border-radius: 15px;
     box-shadow: 0px 4px 8px darken($color-backgnd-secondary,10%);
@@ -189,22 +212,33 @@ header{
     position: relative;
     height: 77px;
     width: 100%;
-    padding: 20px 14px;
+    padding: 14px;
     border-radius: 0 0 15px 15px;
     h3{
-        font-size: 1.1em;
+        font-size: 1em;
+        margin: 4px 0;
     }
     p{
-        font-size: 1.1em;
+        font-size: 1em;
         font-weight: 300;
+        margin: 4px 0;
     }
-    a{
+    .heart{
         position: absolute;
-        right: 24px;
-        top: 24px;
+        right: 23px;
+        top: 23px;
         font-size: 20px;
+        padding: 1px;
         color: $color-backgnd-primary;
+        background-color: $color-backgnd-primary ;
+        background-image: linear-gradient($color-primary, $color-secondary);
         text-shadow: 0px 1px $color-font-primary, 0px -1px $color-font-primary, -1px 0px $color-font-primary, 1px 0px $color-font-primary;
+        background-clip: text;
+        transition: all 400ms;
+        &:hover{
+            text-shadow: none;
+            color: transparent;
+        }
     }
 }
 
@@ -220,5 +254,11 @@ footer{
     }
     li{
         margin:9px 0;
+    }
+    a, a:visited{
+        color: $color-font-secondary;
+        &:hover{
+            color: darken($color-font-secondary, 25%);
+        }
     }
 }
