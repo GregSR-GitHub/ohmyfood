@@ -5,14 +5,14 @@ html {
     font-family: 'Roboto', Verdana, sans-serif;
     font-size: 1em;
 }
-ul{
-list-style-type: none;
-}
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
+ul{
+    list-style-type: none;
+    }
 h1,h2{
     font-size: 1.5em;
 }
@@ -20,62 +20,8 @@ a{
     text-decoration: none;
 }
 
-//Variables//
-
-$color-backgnd-primary: #fff;
-$color-backgnd-secondary: #f6f6f6;
-$color-backgnd-tertiary: #353535;
-$color-backgnd-quaternary: #eaeaea;
-$color-font-primary: #000;
-$color-font-secondary: #fff;
-$color-font-tertiary:#7e7e7e;
-$color-primary: #9356DC;
-$color-secondary: #FF79DA;
-$color-tertiary: #99E2D0;
-$color-primary-lighten: lighten($color-primary, 5%);
-$color-secondary-lighten: lighten($color-secondary, 5%);
-
-
-//Placeholder//
-
-%flex-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-%flex-column {
-    display: flex;
-    flex-direction: column;
-}
-
-//Mixin//
-
-@mixin btn($padding-btn) {
-
-    color: $color-font-secondary;
-    background: linear-gradient(to right bottom, $color-secondary, $color-primary);
-    box-shadow: 0px 4px 8px darken($color-backgnd-secondary,25%);
-    height: 50px;
-    padding: 10px $padding-btn;
-    margin: 13px 0;
-    border-radius: 25px;
-    transition: box-shadow 300ms;
-    transition: margin 100ms;
-    &:hover{
-        margin: 12px 0 14px 0;
-        box-shadow: 0px 4px 8px darken($color-backgnd-secondary,50%);
-        background:  linear-gradient(to right bottom, $color-secondary-lighten, $color-primary-lighten);
-        border-bottom: 2px  $color-primary solid;
-    }
-    &:active{
-        margin: 13px 0 13px 0;
-        box-shadow: 0px 4px 8px darken($color-backgnd-secondary,35%);
-        background:  linear-gradient(to right bottom, $color-secondary-lighten, $color-primary-lighten);
-        border-bottom: 1px  $color-primary solid;
-    }
-    
-}
+//Variable, Mixin & Placeholder//
+@import "utils";
 
 //Header//
 
@@ -137,6 +83,14 @@ header{
     }
 }
 
+.functioning__list__icon{
+    @extend %flex-center;
+    position: relative;
+    left: 12px;
+    width: 23%;
+    color: $color-font-tertiary;
+}
+
 .functioning__list{
     margin: 33px 0 0 0 ;
     width: 100%;
@@ -149,7 +103,14 @@ header{
         margin: 0 0 25px 12px ;
         border-radius: 12px;
         box-shadow: 0px 6px 12px darken($color-backgnd-primary,15%);
+        &:nth-child(3){
+            background-color: mix($color-backgnd-secondary, $color-primary, $weight: 92%);
+        }
+        &:nth-child(3) .functioning__list__icon{
+            color: $color-primary;    
+        }
     }
+
     h3{
         flex:1;
         font-size: 1em;
@@ -169,13 +130,6 @@ header{
     font-size: 14px;
 }
 
-.functioning__list__icon{
-    @extend %flex-center;
-    position: relative;
-    left: 12px;
-    width: 23%;
-    color: $color-font-tertiary;
-}
 
 // Restaurants section //
 
@@ -184,14 +138,25 @@ header{
     @extend %flex-column;
     background-color: $color-backgnd-secondary;
     padding: 44px 5%;
+
     h2{
         width: 100%;
         max-width: 400px;
+        @media screen and (min-width: map-get($breakpoints, tablet)) {
+            max-width: 850px;
+        }
        }
     ul{
+        @extend %flex-column;
+        @extend %flex-center;
         width: 100%;
         max-width: 400px;
         margin: 10px 0;
+        @media screen and (min-width: map-get($breakpoints, tablet)) {
+            flex-flow: row wrap;
+            justify-content: space-between;
+            max-width: 850px;
+        }
     }
 }
 .restaurants-card{
@@ -199,6 +164,12 @@ header{
     margin: 9px 0;
     border-radius: 15px;
     box-shadow: 0px 4px 8px darken($color-backgnd-secondary,10%);
+    width: 100%;
+    max-width: 400px;
+    @media screen and (min-width: map-get($breakpoints, tablet)) {
+        width: 49%;
+        max-width: 415px;
+    }
     img{
         height: 174px;
         width: 100%;
@@ -251,6 +222,14 @@ footer{
     padding: 25px 6%;
     h2{
         font-family: 'Shrikhand', cursive;
+    }
+    ul{
+        @extend %flex-column;
+        @media screen and (min-width: map-get($breakpoints, tablet)) {
+            flex-flow: row wrap;
+            justify-content: space-between;
+            max-width: 600px;
+        }
     }
     li{
         margin:9px 0;

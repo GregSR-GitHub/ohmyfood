@@ -1,0 +1,57 @@
+//Variables//
+
+$color-backgnd-primary: #fff;
+$color-backgnd-secondary: #f6f6f6;
+$color-backgnd-tertiary: #353535;
+$color-backgnd-quaternary: #eaeaea;
+$color-font-primary: #000;
+$color-font-secondary: #fff;
+$color-font-tertiary:#7e7e7e;
+$color-primary: #9356DC;
+$color-secondary: #FF79DA;
+$color-tertiary: #99E2D0;
+$color-primary-lighten: lighten($color-primary, 5%);
+$color-secondary-lighten: lighten($color-secondary, 5%);
+$breakpoints: (tablet: 769px, desktop: 993px);
+
+
+//Mixin//
+
+@mixin btn($padding-btn) {
+
+    color: $color-font-secondary;
+    background: linear-gradient(to right bottom, $color-secondary, $color-primary);
+    box-shadow: 0px 4px 8px darken($color-backgnd-secondary,25%);
+    height: 50px;
+    padding: 10px $padding-btn;
+    margin: 13px 0;
+    border-radius: 25px;
+    transition: box-shadow 300ms;
+    transition: margin 100ms;
+    &:hover{
+        margin: 12px 0 14px 0;
+        box-shadow: 0px 4px 8px darken($color-backgnd-secondary,50%);
+        background:  linear-gradient(to right bottom, $color-secondary-lighten, $color-primary-lighten);
+        border-bottom: 2px  $color-primary solid;
+    }
+    &:active{
+        margin: 13px 0 13px 0;
+        box-shadow: 0px 4px 8px darken($color-backgnd-secondary,35%);
+        background:  linear-gradient(to right bottom, $color-secondary-lighten, $color-primary-lighten);
+        border-bottom: 1px  $color-primary solid;
+    }
+    
+}
+
+//Placeholder//
+
+%flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+%flex-column {
+    display: flex;
+    flex-direction: column;
+}

@@ -5,14 +5,14 @@ html {
   font-size: 1em;
 }
 
-ul {
-  list-style-type: none;
-}
-
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+ul {
+  list-style-type: none;
 }
 
 h1, h2 {
@@ -23,13 +23,13 @@ a {
   text-decoration: none;
 }
 
-.restaurants, .functioning__list__icon, .functioning__list__puce, .functioning__list li, .functioning, .explore a, .explore, .location, header {
+.restaurants ul, .restaurants, .functioning__list__puce, .functioning__list li, .functioning__list__icon, .functioning, .explore a, .explore, .location, header {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-footer, .restaurants-card, .restaurants, .functioning, .explore {
+footer ul, footer, .restaurants-card, .restaurants ul, .restaurants, .functioning, .explore {
   display: flex;
   flex-direction: column;
 }
@@ -99,6 +99,13 @@ header img {
   max-width: 400px;
 }
 
+.functioning__list__icon {
+  position: relative;
+  left: 12px;
+  width: 23%;
+  color: #7e7e7e;
+}
+
 .functioning__list {
   margin: 33px 0 0 0;
   width: 100%;
@@ -111,6 +118,12 @@ header img {
   margin: 0 0 25px 12px;
   border-radius: 12px;
   box-shadow: 0px 6px 12px #d9d9d9;
+}
+.functioning__list li:nth-child(3) {
+  background-color: #eee9f4;
+}
+.functioning__list li:nth-child(3) .functioning__list__icon {
+  color: #9356DC;
 }
 .functioning__list h3 {
   flex: 1;
@@ -129,13 +142,6 @@ header img {
   font-size: 14px;
 }
 
-.functioning__list__icon {
-  position: relative;
-  left: 12px;
-  width: 23%;
-  color: #7e7e7e;
-}
-
 .restaurants {
   background-color: #f6f6f6;
   padding: 44px 5%;
@@ -144,16 +150,36 @@ header img {
   width: 100%;
   max-width: 400px;
 }
+@media screen and (min-width: 769px) {
+  .restaurants h2 {
+    max-width: 850px;
+  }
+}
 .restaurants ul {
   width: 100%;
   max-width: 400px;
   margin: 10px 0;
+}
+@media screen and (min-width: 769px) {
+  .restaurants ul {
+    flex-flow: row wrap;
+    justify-content: space-between;
+    max-width: 850px;
+  }
 }
 
 .restaurants-card {
   margin: 9px 0;
   border-radius: 15px;
   box-shadow: 0px 4px 8px #dddddd;
+  width: 100%;
+  max-width: 400px;
+}
+@media screen and (min-width: 769px) {
+  .restaurants-card {
+    width: 49%;
+    max-width: 415px;
+  }
 }
 .restaurants-card img {
   height: 174px;
@@ -208,6 +234,13 @@ footer {
 }
 footer h2 {
   font-family: "Shrikhand", cursive;
+}
+@media screen and (min-width: 769px) {
+  footer ul {
+    flex-flow: row wrap;
+    justify-content: space-between;
+    max-width: 600px;
+  }
 }
 footer li {
   margin: 9px 0;
