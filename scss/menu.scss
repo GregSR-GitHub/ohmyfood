@@ -1,0 +1,17 @@
+//Bases
+@import "base";
+
+//Variable, Mixin & Placeholder//
+@import "utils";
+
+//Components//
+@import "components";
+
+//Header//
+@import "./layouts/header";
+
+// Home page //
+@import "./pages/menu";
+
+// Footer //
+@import "./layouts/footer";

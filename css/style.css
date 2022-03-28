@@ -17,6 +17,8 @@ ul {
 
 h1, h2 {
   font-size: 1.5em;
+  margin: 0;
+  padding: 0;
 }
 
 a {
@@ -67,12 +69,21 @@ footer ul, footer, .restaurants-card, .restaurants ul, .restaurants, .functionin
 }
 
 header {
+  position: relative;
   height: 63px;
   background-color: #fff;
 }
 header img {
   width: 164px;
   margin-top: 10px;
+}
+
+.retour {
+  position: absolute;
+  margin-top: 10px;
+  left: 15px;
+  font-size: 28px;
+  color: #000;
 }
 
 .location {

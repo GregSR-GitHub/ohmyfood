@@ -55,3 +55,9 @@ $breakpoints: (tablet: 769px, desktop: 993px);
     display: flex;
     flex-direction: column;
 }
+%flex-spacebetween {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+
+}

@@ -1,6 +1,7 @@
 //Header//
 
 header{
+    position: relative;
     height: 63px;
     background-color: $color-backgnd-primary;
     @extend %flex-center;
@@ -8,4 +9,13 @@ header{
         width: 164px;
         margin-top: 10px;
     }
+}
+
+.retour{
+    position: absolute;
+    margin-top: 10px;
+    left: 15px;
+    font-size: 28px;
+    color: $color-font-primary;
+
 }
