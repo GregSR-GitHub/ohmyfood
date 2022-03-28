@@ -27,15 +27,15 @@ $breakpoints: (tablet: 769px, desktop: 993px);
     margin: 13px 0;
     border-radius: 25px;
     transition: box-shadow 300ms;
-    transition: margin 100ms;
+    transition: margin 150ms, box-shadow 150ms;
     &:hover{
         margin: 12px 0 14px 0;
         box-shadow: 0px 4px 8px darken($color-backgnd-secondary,50%);
         background:  linear-gradient(to right bottom, $color-secondary-lighten, $color-primary-lighten);
-        border-bottom: 2px  $color-primary solid;
+        border-bottom: 1px  $color-primary solid;
     }
     &:active{
-        margin: 13px 0 13px 0;
+        margin: 13px 0;
         box-shadow: 0px 4px 8px darken($color-backgnd-secondary,35%);
         background:  linear-gradient(to right bottom, $color-secondary-lighten, $color-primary-lighten);
         border-bottom: 1px  $color-primary solid;

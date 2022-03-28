@@ -1,0 +1,27 @@
+// Footer //
+footer{
+    @extend %flex-column;
+    background-color: $color-backgnd-tertiary;
+    color: $color-font-secondary;
+    padding: 25px 6%;
+    h2{
+        font-family: 'Shrikhand', cursive;
+    }
+    ul{
+        @extend %flex-column;
+        @media screen and (min-width: map-get($breakpoints, tablet)) {
+            flex-flow: row wrap;
+            justify-content: space-between;
+            max-width: 600px;
+        }
+    }
+    li{
+        margin:9px 0;
+    }
+    a, a:visited{
+        color: $color-font-secondary;
+    }
+    a:hover{
+        color: darken($color-font-secondary, 25%);
+    }
+}

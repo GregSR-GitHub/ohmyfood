@@ -1,0 +1,11 @@
+//Header//
+
+header{
+    height: 63px;
+    background-color: $color-backgnd-primary;
+    @extend %flex-center;
+    img{
+        width: 164px;
+        margin-top: 10px;
+    }
+}
