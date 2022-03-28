@@ -60,7 +60,7 @@ footer ul, footer, .restaurants-card, .restaurants ul, .restaurants, .functionin
   background-image: linear-gradient(#9356DC, #FF79DA);
   -webkit-background-clip: text;
           background-clip: text;
-  transform: scale(0.1);
+  transform: scale(0);
   transition: all 300ms;
 }
 .heart:hover .heart__center {
@@ -81,8 +81,8 @@ header img {
 .retour {
   position: absolute;
   margin-top: 10px;
-  left: 15px;
-  font-size: 28px;
+  left: 18px;
+  font-size: 20px;
   color: #000;
 }
 
