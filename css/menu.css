@@ -25,7 +25,7 @@ a {
   text-decoration: none;
 }
 
-.command a, .command, header {
+.command a, .command, .list-valid, header {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -178,9 +178,14 @@ header img {
 .menu__list:hover .list-valid {
   width: 59px;
 }
+.menu__list:hover .valid-circle {
+  margin-left: 0px;
+  transform: rotate(1turn);
+}
 
 .list-infos {
-  width: 100%;
+  width: auto;
+  flex: 1;
   padding: 14px 11px;
 }
 .list-infos h3 {
@@ -204,6 +209,14 @@ header img {
   width: 0px;
   background-color: #99E2D0;
   border-radius: 0 15px 15px 0;
+  color: #fff;
+  font-size: 20px;
+  transition: all 500ms;
+}
+
+.valid-circle {
+  margin-left: 25px;
+  transform: rotate(0turn);
   transition: all 500ms;
 }
 
@@ -212,26 +225,25 @@ header img {
 }
 .command a {
   color: #fff;
-  background: linear-gradient(to right bottom, #FF79DA, #9356DC);
-  box-shadow: 0px 4px 8px #b6b6b6;
+  background-color: #9356DC;
+  background-image: linear-gradient(to right bottom, #FF79DA, rgba(147, 86, 220, 0.5));
+  box-shadow: 0px 0px 8px #b6b6b6;
   height: 50px;
   padding: 10px 50px;
   margin: 13px 0;
   border-radius: 25px;
-  transition: box-shadow 300ms;
-  transition: margin 150ms, box-shadow 150ms;
+  transform: scale(1);
+  transition: background-color 250ms, box-shadow 250ms;
 }
 .command a:hover {
-  margin: 12px 0 14px 0;
-  box-shadow: 0px 4px 8px #777777;
-  background: linear-gradient(to right bottom, #ff93e1, #a16be0);
-  border-bottom: 1px #9356DC solid;
+  transform: scale(1);
+  box-shadow: 0px 0px 10px #5d5d5d;
+  background-color: #fface8;
 }
 .command a:active {
-  margin: 13px 0;
-  box-shadow: 0px 4px 8px #9d9d9d;
-  background: linear-gradient(to right bottom, #ff93e1, #a16be0);
-  border-bottom: 1px #9356DC solid;
+  transform: scale(1);
+  box-shadow: 0px 0px 8px #9d9d9d;
+  background-color: #fface8;
 }
 
 footer {

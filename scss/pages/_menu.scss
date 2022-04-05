@@ -84,11 +84,16 @@
     box-shadow: 1px 1px 8px darken($color-backgnd-secondary,10%);
     border-radius: 15px;
     &:hover .list-valid{
-            width: 59px;
+        width: 59px;
+    }
+    &:hover .valid-circle{
+        margin-left: 0px;
+        transform: rotate(1turn);
     }
 }
 .list-infos{
-    width: 100%;
+    width: auto;
+    flex: 1;
     padding:14px 11px;
     h3{
         font-size: 1em;
@@ -109,8 +114,16 @@
 }
 .list-valid{
     width: 0px;
+    @extend %flex-center;
     background-color: $color-tertiary;
     border-radius: 0 15px 15px 0;
+    color: $color-font-secondary;
+    font-size: 20px;
+    transition: all 500ms;
+}
+.valid-circle{
+    margin-left: 25px;
+    transform: rotate(0turn);
     transition: all 500ms;
 }
 .command{

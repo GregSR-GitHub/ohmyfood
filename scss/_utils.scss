@@ -10,8 +10,7 @@ $color-font-tertiary:#7e7e7e;
 $color-primary: #9356DC;
 $color-secondary: #FF79DA;
 $color-tertiary: #99E2D0;
-$color-primary-lighten: lighten($color-primary, 5%);
-$color-secondary-lighten: lighten($color-secondary, 5%);
+$color-secondary-lighten: lighten($color-secondary, 10%);
 $breakpoints: (tablet: 769px, desktop: 993px);
 
 
@@ -20,25 +19,24 @@ $breakpoints: (tablet: 769px, desktop: 993px);
 @mixin btn($padding-btn) {
 
     color: $color-font-secondary;
-    background: linear-gradient(to right bottom, $color-secondary, $color-primary);
-    box-shadow: 0px 4px 8px darken($color-backgnd-secondary,25%);
+    background-color: $color-primary ;
+    background-image: linear-gradient(to right bottom, $color-secondary, rgba($color-primary, 0.5));
+    box-shadow: 0px 0px 8px darken($color-backgnd-secondary,25%);
     height: 50px;
     padding: 10px $padding-btn;
     margin: 13px 0;
     border-radius: 25px;
-    transition: box-shadow 300ms;
-    transition: margin 150ms, box-shadow 150ms;
+    transform: scale(1);
+    transition: background-color 250ms, box-shadow 250ms;
     &:hover{
-        margin: 12px 0 14px 0;
-        box-shadow: 0px 4px 8px darken($color-backgnd-secondary,50%);
-        background:  linear-gradient(to right bottom, $color-secondary-lighten, $color-primary-lighten);
-        border-bottom: 1px  $color-primary solid;
+        transform: scale(1);
+        box-shadow: 0px 0px 10px darken($color-backgnd-secondary,60%);
+        background-color: $color-secondary-lighten;
     }
     &:active{
-        margin: 13px 0;
-        box-shadow: 0px 4px 8px darken($color-backgnd-secondary,35%);
-        background:  linear-gradient(to right bottom, $color-secondary-lighten, $color-primary-lighten);
-        border-bottom: 1px  $color-primary solid;
+        transform: scale(1);
+        box-shadow: 0px 0px 8px darken($color-backgnd-secondary,35%);
+        background-color: $color-secondary-lighten;
     }
     
 }
