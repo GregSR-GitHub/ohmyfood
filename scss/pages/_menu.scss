@@ -74,6 +74,19 @@
     }
 }
 
+@keyframes menu-intro{
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+$menu-intro-delay: 200ms;
+
 .menu__list{
     @extend %flex-spacebetween;    
     height: 68px;
@@ -83,14 +96,28 @@
     background-color: $color-backgnd-primary;
     box-shadow: 1px 1px 8px darken($color-backgnd-secondary,10%);
     border-radius: 15px;
+    opacity: 1;
+
+
     &:hover .list-valid{
-        width: 59px;
+        transform: translateX(0);
+    }
+    &:hover .list-price{
+        transform: translateX(0);
     }
     &:hover .valid-circle{
         margin-left: 0px;
         transform: rotate(1turn);
     }
+
+    @for $n from 1 through 5 {
+        &:nth-child(#{$n}){
+            animation: menu-intro 800ms ($menu-intro-delay*$n) ease-out both;
+        }
+
+    }
 }
+
 .list-infos{
     width: auto;
     flex: 1;
@@ -106,14 +133,17 @@
 }
 .list-price{
     width: 50px;
+    transform: translateX(60px);
     padding:36px 10px 10px 5px;
     font-size: 0.9em;
     text-align: center;
     font-weight: bold;
+    transition: all 500ms;
  
 }
 .list-valid{
-    width: 0px;
+    width: 59px;
+    transform: translateX(60px);
     @extend %flex-center;
     background-color: $color-tertiary;
     border-radius: 0 15px 15px 0;
