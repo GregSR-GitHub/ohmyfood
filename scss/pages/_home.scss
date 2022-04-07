@@ -21,14 +21,18 @@
     @extend %flex-center;
     @extend %flex-column;
     background-color: $color-backgnd-secondary;
-    padding: 44px 5%;
+    padding: 44px 6%;
     a{
         @extend %flex-center;
         @include btn(22px);
     }
+    h2{
+        text-align: center;
+    }
     p{
         font-size: 1.2em;
         font-weight: 300;
+        text-align: center;
         margin: 22px 0;
     }
 }

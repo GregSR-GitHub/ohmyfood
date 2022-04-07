@@ -102,7 +102,7 @@ header img {
 
 .explore {
   background-color: #f6f6f6;
-  padding: 44px 5%;
+  padding: 44px 6%;
 }
 .explore a {
   position: relative;
@@ -132,9 +132,13 @@ header img {
   content: "";
   transition: opacity 250ms;
 }
+.explore h2 {
+  text-align: center;
+}
 .explore p {
   font-size: 1.2em;
   font-weight: 300;
+  text-align: center;
   margin: 22px 0;
 }
 

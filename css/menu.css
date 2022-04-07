@@ -36,7 +36,7 @@ footer ul, footer, .command, .menu ul {
   flex-direction: column;
 }
 
-.menu__list, .menu-title {
+.list-end, .menu-title {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
@@ -166,6 +166,43 @@ header img {
   width: 40px;
   content: "";
 }
+.menu ul:nth-of-type(1) .menu__list:nth-child(1) {
+  -webkit-animation: menu-intro 800ms 150ms ease-out both;
+          animation: menu-intro 800ms 150ms ease-out both;
+}
+.menu ul:nth-of-type(1) .menu__list:nth-child(2) {
+  -webkit-animation: menu-intro 800ms 300ms ease-out both;
+          animation: menu-intro 800ms 300ms ease-out both;
+}
+.menu ul:nth-of-type(1) .menu__list:nth-child(3) {
+  -webkit-animation: menu-intro 800ms 450ms ease-out both;
+          animation: menu-intro 800ms 450ms ease-out both;
+}
+.menu ul:nth-of-type(2) .menu__list:nth-child(1) {
+  -webkit-animation: menu-intro 800ms 600ms ease-out both;
+          animation: menu-intro 800ms 600ms ease-out both;
+}
+.menu ul:nth-of-type(2) .menu__list:nth-child(2) {
+  -webkit-animation: menu-intro 800ms 750ms ease-out both;
+          animation: menu-intro 800ms 750ms ease-out both;
+}
+.menu ul:nth-of-type(2) .menu__list:nth-child(3) {
+  -webkit-animation: menu-intro 800ms 900ms ease-out both;
+          animation: menu-intro 800ms 900ms ease-out both;
+}
+.menu ul:nth-of-type(3) .menu__list:nth-child(1) {
+  -webkit-animation: menu-intro 800ms 1050ms ease-out both;
+          animation: menu-intro 800ms 1050ms ease-out both;
+}
+.menu ul:nth-of-type(3) .menu__list:nth-child(2) {
+  -webkit-animation: menu-intro 800ms 1200ms ease-out both;
+          animation: menu-intro 800ms 1200ms ease-out both;
+}
+.menu ul:nth-of-type(3) .menu__list:nth-child(3) {
+  -webkit-animation: menu-intro 800ms 1350ms ease-out both;
+          animation: menu-intro 800ms 1350ms ease-out both;
+}
+
 @-webkit-keyframes menu-intro {
   0% {
     opacity: 0;
@@ -176,6 +213,7 @@ header img {
     transform: translateY(0);
   }
 }
+
 @keyframes menu-intro {
   0% {
     opacity: 0;
@@ -187,78 +225,74 @@ header img {
   }
 }
 .menu__list {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
   height: 68px;
   width: 100%;
   margin: 7px 0;
-  overflow: hidden;
   background-color: #fff;
   box-shadow: 1px 1px 8px #dddddd;
   border-radius: 15px;
   opacity: 1;
+  overflow: hidden;
 }
-.menu__list:hover .list-valid {
-  transform: translateX(0);
-}
-.menu__list:hover .list-price {
+.menu__list:hover .list-end {
   transform: translateX(0);
 }
 .menu__list:hover .valid-circle {
   margin-left: 0px;
   transform: rotate(1turn);
 }
-.menu__list:nth-child(1) {
-  -webkit-animation: menu-intro 800ms 200ms ease-out both;
-          animation: menu-intro 800ms 200ms ease-out both;
-}
-.menu__list:nth-child(2) {
-  -webkit-animation: menu-intro 800ms 400ms ease-out both;
-          animation: menu-intro 800ms 400ms ease-out both;
-}
-.menu__list:nth-child(3) {
-  -webkit-animation: menu-intro 800ms 600ms ease-out both;
-          animation: menu-intro 800ms 600ms ease-out both;
-}
-.menu__list:nth-child(4) {
-  -webkit-animation: menu-intro 800ms 800ms ease-out both;
-          animation: menu-intro 800ms 800ms ease-out both;
-}
-.menu__list:nth-child(5) {
-  -webkit-animation: menu-intro 800ms 1000ms ease-out both;
-          animation: menu-intro 800ms 1000ms ease-out both;
+.menu__list:hover .list-infos {
+  padding: 14px 120px 14px 11px;
 }
 
 .list-infos {
-  width: auto;
+  width: 100%;
   flex: 1;
-  padding: 14px 11px;
+  padding: 14px 61px 14px 11px;
+  transition: all 500ms;
 }
 .list-infos h3 {
   font-size: 1em;
   margin-bottom: 6px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .list-infos p {
   font-size: 0.9em;
   font-weight: 300;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.list-end {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  width: 119px;
+  border-radius: 15px;
+  transform: translateX(59px);
+  transition: all 500ms;
 }
 
 .list-price {
   width: 50px;
-  transform: translateX(60px);
   padding: 36px 10px 10px 5px;
   font-size: 0.9em;
   text-align: center;
   font-weight: bold;
-  transition: all 500ms;
 }
 
 .list-valid {
   width: 59px;
-  transform: translateX(60px);
   background-color: #99E2D0;
   border-radius: 0 15px 15px 0;
   color: #fff;
   font-size: 20px;
-  transition: all 500ms;
 }
 
 .valid-circle {
