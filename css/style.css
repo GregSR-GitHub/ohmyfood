@@ -25,7 +25,7 @@ a {
   text-decoration: none;
 }
 
-.restaurants ul, .restaurants, .functioning__list__puce, .functioning__list li, .functioning__list__icon, .functioning, .explore a, .explore, .location, header {
+.restaurants ul, .restaurants, .functioning__list__puce, .functioning__list li, .functioning__list__icon, .functioning, .explore a, .explore, .location, header, .loading-circle, .loading {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -68,6 +68,101 @@ footer ul, footer, .restaurants-card, .restaurants ul, .restaurants, .functionin
   color: transparent;
 }
 
+.loading {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  background-color: white;
+  overflow: hidden;
+  -webkit-animation: loading-visibility 250ms 2000ms forwards;
+          animation: loading-visibility 250ms 2000ms forwards;
+}
+
+@-webkit-keyframes loading-visibility {
+  99% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes loading-visibility {
+  99% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+.loading-circle {
+  width: 180px;
+  height: 180px;
+  border-radius: 90px;
+  border-top: 3px #9356DC solid;
+  border-right: 3px #9356DC solid;
+  -webkit-animation: loading-circle 500ms linear infinite;
+          animation: loading-circle 500ms linear infinite;
+}
+
+.loading-bar {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  background-color: #FF79DA;
+  box-shadow: 0 0 5px #FF79DA;
+  width: 100%;
+  height: 2px;
+  -webkit-animation: loading-bar 2000ms ease-out both;
+          animation: loading-bar 2000ms ease-out both;
+  transform-origin: left;
+}
+
+@-webkit-keyframes loading-bar {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes loading-bar {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+.loading-logo {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Shrikhand", cursive;
+  color: #9356DC;
+  font-size: 20px;
+  text-shadow: 2px 2px 0 #782cd3;
+}
+
+@-webkit-keyframes loading-circle {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes loading-circle {
+  to {
+    transform: rotate(1turn);
+  }
+}
 header {
   position: relative;
   height: 63px;
