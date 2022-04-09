@@ -4,6 +4,7 @@ $color-backgnd-primary: #fff;
 $color-backgnd-secondary: #f6f6f6;
 $color-backgnd-tertiary: #353535;
 $color-backgnd-quaternary: #eaeaea;
+$color-backgnd-loading: $color-backgnd-primary;
 $color-font-primary: #000;
 $color-font-secondary: #fff;
 $color-font-tertiary:#7e7e7e;
@@ -13,6 +14,8 @@ $color-tertiary: #99E2D0;
 $color-primary-lighten: lighten($color-primary, 6%);
 $color-secondary-lighten: lighten($color-secondary, 5%);
 $breakpoints: (tablet: 769px, desktop: 993px);
+$menu-intro-delay: 150ms;
+$loading-duration: 1500ms;
 
 
 //Mixin//
@@ -68,4 +71,10 @@ $breakpoints: (tablet: 769px, desktop: 993px);
     flex-flow: row nowrap;
     justify-content: space-between;
 
+}
+%fixed-center{
+    position: fixed;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
 }
