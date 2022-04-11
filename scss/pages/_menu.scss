@@ -113,7 +113,7 @@
     &:hover .list-end{
         transform: translateX(0);
     }
-    &:hover .valid-circle{
+    &:hover .list-valid__circle{
         margin-left: 0px;
         transform: rotate(1turn);
     }
@@ -168,7 +168,7 @@
     color: $color-font-secondary;
     font-size: 20px;
 }
-.valid-circle{
+.list-valid__circle{
     margin-left: 25px;
     transform: rotate(0turn);
     transition: all 500ms;
@@ -180,6 +180,6 @@
 
     a{
         @extend %flex-center;
-        @include btn(50px);
+        padding: 10px 50px;
     }
 }

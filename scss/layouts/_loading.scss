@@ -37,12 +37,17 @@
 @keyframes change-logo{
     65%{
         color: $color-primary;
+        opacity:0;
     }
     70%{
         color: white;
     }
+    80%{
+        opacity:1;
+    }
     100%{
         color: white;
+        opacity:1;
     }
 }
 
@@ -67,17 +72,17 @@
 }
 
 .loading-circle{
-    width: 180px;
-    height: 180px;
-    border-radius: 90px;
+    width: 160px;
+    height: 160x;
+    border-radius: 80px;
     background:  linear-gradient(to right bottom, $color-secondary, $color-primary);
     background-color: $color-primary;
     box-shadow: 0 0 15px $color-backgnd-loading;
-    animation: loading-circle 350ms linear infinite;
+    animation: loading-circle 400ms linear infinite;
     &__backgnd--secondary{
-        width: 180px;
-        height: 180px;
-        border-radius: 90px;
+        width: 160px;
+        height: 160px;
+        border-radius: 80px;
         background-color: $color-backgnd-loading;
         border-top: 3px $color-primary solid;
         border-right: 3px $color-primary solid;
@@ -89,9 +94,9 @@
 .loading-border{
     @extend %fixed-center;
     background-color: $color-backgnd-loading;
-    width: 200px;
-    height: 200px;
-    border-radius: 100px;
+    width: 180px;
+    height: 180px;
+    border-radius: 90px;
     border: 1px $color-primary solid;
 }
 
@@ -111,6 +116,7 @@
 .loading-logo{
     @extend %fixed-center;
     font-family: 'Shrikhand', cursive;
+    opacity:0;
     color: $color-primary;
     font-size: 26px;
     animation: change-logo $loading-duration ease-in both;
