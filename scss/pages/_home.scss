@@ -1,28 +1,15 @@
-// General //
-
-h1{
-    font-size: 1.5em;
-}
-
-// Header //
-header{
-    box-shadow: 0px 3px 3px darken($color-backgnd-quaternary, 10%);
-}
-
 // Location //
 
 .location{
-    @extend %flex-center;
+    @include flex-center;
     height: 50px;
     background-color: $color-backgnd-quaternary;
     box-shadow: inset 0px 3px 3px darken($color-backgnd-quaternary, 10%);
-    @media screen and (min-width: map-get($breakpoints, desktop)) {
-        max-width: 992px;
+    @include version-maxw(desktop) {
         box-shadow: inset 0px 3px 3px darken($color-backgnd-quaternary, 10%), 0px 6px 12px darken($color-backgnd-primary,15%);
         margin: 0 auto;
     }
     &__txt{
-        font-size: 1em;
         position: relative;
         &__icon{
             position: absolute;
@@ -34,18 +21,17 @@ header{
 // Explore section //
 
 .explore{
-    @extend %flex-center;
+    @include flex-center;
     @extend %flex-column;
     background-color: $color-backgnd-secondary;
     padding: 44px 6%;
-    @media screen and (min-width: map-get($breakpoints, desktop)) {
-        max-width: 992px;
-        border-radius: 0 0 15px 15px;
+    @include version-maxw(desktop) {
+        @include border-radius-topbot(0,15px);
         @include home-shadow;
         margin: 0 auto;
     }
     a{
-        @extend %flex-center;
+        @include flex-center;
         padding: 10px 22px;
     }
     h1{
@@ -62,103 +48,24 @@ header{
 // Functioning section //
 
 .functioning{
-    @extend %flex-center;
+    @include flex-center;
     @extend %flex-column;
     padding: 44px 5%;
     h1{
      width: 100%;
      max-width: 400px;
-     @media screen and (min-width: map-get($breakpoints, tablet)) {
-        max-width: 850px;
-    }
+     @include version-maxw(desktop)
     }
 }
-
-.functioning__list__icon{
-    @extend %flex-center;
-    position: relative;
-    left: 12px;
-    width: 23%;
-    color: $color-font-tertiary;
-    @media screen and (min-width: map-get($breakpoints, tablet)) {
-        position: absolute;
-        width: 50px;
-        height: 50px;
-        top: -25px;
-        left: 50%;
-        font-size: 22px;
-        transform: translateX(-50%);
-        background-color: $color-backgnd-primary;
-        border: 3px $color-backgnd-secondary solid;
-        border-radius: 15px;
-    }
-}
-
-.functioning__list{
-    margin: 33px 0 0 0 ;
-    width: 100%;
-    max-width: 400px;
-    @media screen and (min-width: map-get($breakpoints, tablet)) {
-        display: flex;
-        justify-content: space-between;
-        max-width: 850px;
-    }
-    li{
-        @extend %flex-center;
-        position: relative;
-        background-color: $color-backgnd-secondary;
-        height: 72px;
-        margin: 0 0 25px 12px ;
-        border-radius: 12px;
-        @include home-shadow;
-        @media screen and (min-width: map-get($breakpoints, tablet)) {
-            height: 95px;
-            width: 30%;
-        }
-        &:nth-child(3){
-            background-color: mix($color-backgnd-secondary, $color-primary, $weight: 92%);
-        }
-        &:nth-child(3) .functioning__list__icon{
-            color: $color-primary;    
-            @media screen and (min-width: map-get($breakpoints, tablet)) {
-                border: 3px mix($color-backgnd-secondary, $color-primary, $weight: 92%) solid;
-            }
-        }
-    }
-
-    h2{
-        flex:1;
-        font-size: 1em;
-        font-weight: 400;
-        @media screen and (min-width: map-get($breakpoints, tablet)) {
-            margin: 0 20px;
-            text-align: center;
-        }
-    }
-}
-
-.functioning__list__puce{
-    @extend %flex-center;
-    position: absolute;
-    left: -12px;
-    background-color: $color-primary;
-    color: $color-font-secondary;
-    width: 24px;
-    height: 24px;
-    border-radius: 12px;
-    font-size: 14px;
-}
-
 
 // Restaurants section //
 
 .restaurants{
-    @extend %flex-center;
+    @include flex-center;
     @extend %flex-column;
     background-color: $color-backgnd-secondary;
     padding: 44px 5%;
-    @media screen and (min-width: map-get($breakpoints, desktop)) {
-        max-width: 992px;
+    @include version-maxw(desktop) {
         border-radius: 15px 15px 0 0;
         @include home-shadow;
         margin: 0 auto;
@@ -168,61 +75,17 @@ header{
     h1{
         width: 100%;
         max-width: 400px;
-        @media screen and (min-width: map-get($breakpoints, tablet)) {
-            max-width: 850px;
-        }
+        @include version-maxw(tablet)
        }
     ul{
         @extend %flex-column;
-        @extend %flex-center;
+        @include flex-center;
         width: 100%;
         max-width: 400px;
         margin: 10px 0;
-        @media screen and (min-width: map-get($breakpoints, tablet)) {
+        @include version-maxw(tablet) {
             flex-flow: row wrap;
             justify-content: space-between;
-            max-width: 850px;
-        }
-    }
-}
-
-.restaurants-card{
-    @extend %flex-column;
-    margin: 9px 0;
-    border-radius: 15px;
-    box-shadow: 0px 4px 8px darken($color-backgnd-secondary,10%);
-    width: 100%;
-    max-width: 400px;
-    @media screen and (min-width: map-get($breakpoints, tablet)) {
-        width: 49%;
-        max-width: 415px;
-    }
-    &>a{
-        height: 174px;
-    }
-    img{
-        height: 174px;
-        width: 100%;
-        object-fit: cover;
-        object-position: center;
-        border-radius: 15px 15px 0 0;
-        margin: 0;
-    }
-    &__infos{
-        background-color: $color-backgnd-primary;
-        position: relative;
-        height: 77px;
-        width: 100%;
-        padding: 14px;
-        border-radius: 0 0 15px 15px;
-        h2{
-            font-size: 1em;
-            margin: 4px 0;
-        }
-        p{
-            font-size: 1em;
-            font-weight: 300;
-            margin: 4px 0;
         }
     }
 }

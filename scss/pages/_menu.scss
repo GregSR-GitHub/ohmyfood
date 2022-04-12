@@ -1,27 +1,22 @@
 .top-menu{
     position: relative;
-    padding: 0;
 
     &__header{
         position: absolute;
         bottom: 0;
-
         width: 100%;
         height: 35px;
         background-color: $color-backgnd-secondary;
-        border-radius: 38px 38px 0 0;
-        @media screen and (min-width: map-get($breakpoints, tablet)) {
-            max-width: 850px;
+        @include border-radius-topbot(38px,0);
+        @include version-maxw(tablet) {
             left: 50%;
             transform: translate(-50%, 0);
         }
     }
-}
-.top-img{
-    height: 255px;
-    width: 100%;
-    object-fit: cover;
-    object-position: center;
+
+    &__img{
+        @include img-fit(255px);
+    }
 }
 
 .menu-backnd{
@@ -29,21 +24,18 @@
     width: 100%;
     padding: 0 14px;
     margin: 0;
-    @media screen and (min-width: map-get($breakpoints, tablet)) {
-        max-width: 850px;
+    @include version-maxw(tablet) {
         margin: 0 auto;
     }
 }
 
 .menu-title{
     position: relative;
-    padding: 0 0 14px 0;
+    padding-bottom: 14px;
     @extend %flex-spacebetween;
     align-items: center;
-    h1{
-        font-family: 'Shrikhand', cursive;
-        font-size: 1.6em;
-    }
+    font-family: 'Shrikhand', cursive;
+
     .heart{
         position: relative;
         right: 0px;
@@ -57,7 +49,7 @@
         position: relative;
         text-transform: uppercase;
         font-weight: 300;
-        margin: 30px 6px 26px 6px;
+        margin: 30px 6px 26px;
         font-size: 1em;
         &:after{
             position: absolute;
@@ -70,14 +62,14 @@
         }
     }
     
-    ul{
+    &__list{
         @extend %flex-column;
     }
 
     @for $nu from 1 through 3 {
         & ul:nth-of-type(#{$nu}){
             @for $n from 1 through 3 {
-                & .menu__list:nth-child(#{$n}){
+                & .meal:nth-child(#{$n}){
                     animation: menu-intro 800ms (($menu-intro-delay*$n)+(($menu-intro-delay*3)*(($nu)-1))) ease-out both;
                 }
             }
@@ -85,101 +77,13 @@
     }
 }
 
-@keyframes menu-intro{
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100%{
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.menu__list{
-    position: relative;
-    display: flex; 
-    justify-content: flex-end; 
-    height: 68px;
-    width: 100%;
-    margin: 7px 0;
-    background-color: $color-backgnd-primary;
-    box-shadow: 1px 1px 8px darken($color-backgnd-secondary,10%);
-    border-radius: 15px;
-    opacity: 1;
-    overflow: hidden;
-
-
-    &:hover .list-end{
-        transform: translateX(0);
-    }
-    &:hover .list-valid__circle{
-        margin-left: 0px;
-        transform: rotate(1turn);
-    }
-    &:hover .list-infos{
-        padding:14px 120px 14px 11px;
-    }
-}
-
-.list-infos{
-    width: 100%;
-    flex: 1;
-    padding:14px 61px 14px 11px;
-    transition: all 500ms;
-    h3{
-        font-size: 1em;
-        margin-bottom:6px;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-    }
-    p{
-        font-size: 0.9em;
-        font-weight: 300;
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-    }
-}
-.list-end{
-    position: absolute;
-    right: 0;
-    height: 100%;
-    width: 119px;
-    @extend %flex-spacebetween;
-    border-radius: 15px;
-    transform: translateX(59px);
-    transition: all 500ms;
-}
-.list-price{
-    width: 50px;
-    padding:36px 10px 10px 5px;
-    font-size: 0.9em;
-    text-align: center;
-    font-weight: bold;
- 
-}
-.list-valid{
-    width: 59px;
-    @extend %flex-center;
-    background-color: $color-tertiary;
-    border-radius: 0 15px 15px 0;
-    color: $color-font-secondary;
-    font-size: 20px;
-}
-.list-valid__circle{
-    margin-left: 25px;
-    transform: rotate(0turn);
-    transition: all 500ms;
-}
 .command{
-    @extend %flex-center;
+    @include flex-center;
     @extend %flex-column;
     padding: 40px 0;
 
     a{
-        @extend %flex-center;
+        @include flex-center;
         padding: 10px 50px;
     }
 }

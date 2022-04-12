@@ -1,11 +1,16 @@
 //Bases
-@import "base";
+@import "./base/base";
 
 //Variable, Mixin & Placeholder//
-@import "utils";
+@import "./utils/utils";
+@import "./utils/mixins";
+@import "./utils/keyframes";
 
 //Components//
-@import "components";
+@import "./components/heart";
+@import "./components/btn";
+@import "./components/steps";
+@import "./components/card";
 
 //Loading/
 @import "./layouts/loading";

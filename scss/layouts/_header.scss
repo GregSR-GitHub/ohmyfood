@@ -4,12 +4,20 @@ header{
     position: relative;
     height: 63px;
     background-color: $color-backgnd-primary;
-    @extend %flex-center;
+    @include flex-center;
     img{
         width: 164px;
         margin-top: 10px;
     }
 }
+
+// Home page //
+
+.header--shadow{
+    box-shadow: 0px 3px 3px darken($color-backgnd-quaternary, 10%);
+}
+
+// Menu pages //
 
 .retour{
     position: absolute;

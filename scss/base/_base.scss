@@ -6,7 +6,7 @@ html {
     font-family: 'Roboto', Verdana, sans-serif;
     font-size: 1em;
 }
-*{
+*,h1,h2,h3{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -14,10 +14,11 @@ html {
 ul{
     list-style-type: none;
     }
-h1,h2{
+h1{
     font-size: 1.5em;
-    margin: 0;
-    padding: 0;
+}
+h2{
+    font-size: 1em;
 }
 a{
     text-decoration: none;

@@ -1,0 +1,72 @@
+
+.steps{
+    margin-top: 33px;
+    width: 100%;
+    max-width: 400px;
+    @include version-maxw(tablet) {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    h2{
+        flex:1;
+        font-weight: 400;
+        @include version(tablet) {
+            margin: 0 20px;
+            text-align: center;
+        }
+    }
+}
+
+.steps__list{
+    @include flex-center;
+    position: relative;
+    background-color: $color-backgnd-secondary;
+    height: 72px;
+    margin: 0 0 25px 12px ;
+    border-radius: 12px;
+    @include home-shadow;
+    @include version(tablet) {
+        height: 95px;
+        width: 30%;
+    }
+    &--third{
+        background-color: $color-third-step;
+    }
+}
+
+.steps__list__icon{
+    @include flex-center;
+    position: relative;
+    left: 12px;
+    width: 23%;
+    color: $color-font-tertiary;
+    @include version(tablet) {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        top: -25px;
+        left: 50%;
+        font-size: 22px;
+        transform: translateX(-50%);
+        background-color: $color-backgnd-primary;
+        border: 3px $color-backgnd-secondary solid;
+        border-radius: 15px;
+    }
+    &--third{
+        color: $color-primary;    
+        @include version(tablet) {
+            border: 3px $color-third-step solid;
+        }
+    }
+}
+
+.steps__list__puce{
+    @include flex-center;
+    position: absolute;
+    left: -12px;
+    background-color: $color-primary;
+    color: $color-font-secondary;
+    @include circle(24px);
+    font-size: 14px;
+}

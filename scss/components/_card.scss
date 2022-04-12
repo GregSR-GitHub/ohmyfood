@@ -1,0 +1,36 @@
+// Card //
+
+.card{
+    @extend %flex-column;
+    margin: 9px 0;
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px darken($color-backgnd-secondary,10%);
+    width: 100%;
+    max-width: 400px;
+    @include version(tablet) {
+        width: 49%;
+        max-width: 415px;
+    }
+    &>a{
+        height: 174px;
+    }
+    img{
+        @include img-fit(174px);
+        @include border-radius-topbot(15px,0);
+        margin: 0;
+    }
+    &__infos{
+        background-color: $color-backgnd-primary;
+        position: relative;
+        height: 77px;
+        width: 100%;
+        padding: 14px;
+        @include border-radius-topbot(0,15px);
+        h2,p{
+            margin: 4px 0;
+        }
+        p{
+            font-weight: 300;
+        }
+    }
+}

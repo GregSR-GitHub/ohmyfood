@@ -1,0 +1,74 @@
+
+.meal{
+    position: relative;
+    display: flex; 
+    justify-content: flex-end; 
+    height: 68px;
+    width: 100%;
+    margin: 7px 0;
+    background-color: $color-backgnd-primary;
+    box-shadow: 1px 1px 8px darken($color-backgnd-secondary,10%);
+    border-radius: 15px;
+    opacity: 1;
+    overflow: hidden;
+
+
+    &:hover .meal__end{
+        transform: translateX(0);
+    }
+    &:hover .meal__end__valid__circle{
+        transform: rotate(1turn);
+    }
+    &:hover .meal__infos{
+        padding-right: 120px;
+    }
+}
+
+.meal__infos{
+    width: 100%;
+    flex: 1;
+    padding:14px 61px 14px 11px;
+    transition: all $meal-valid-duration;
+    h3{
+        font-size: 1em;
+        margin-bottom:6px;
+        @include ellipsis;
+    }
+    p{
+        font-size: 0.9em;
+        font-weight: 300;
+        @include ellipsis;
+    }
+}
+.meal__end{
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: 119px;
+    @extend %flex-spacebetween;
+    border-radius: 15px;
+    transform: translateX(59px);
+    transition: transform $meal-valid-duration;
+
+    &__price{
+        width: 50px;
+        padding:36px 10px 10px 5px;
+        font-size: 0.9em;
+        text-align: center;
+        font-weight: bold;
+    
+    }
+    &__valid{
+        width: 59px;
+        @include flex-center;
+        background-color: $color-tertiary;
+        border-radius: 0 15px 15px 0;
+        color: $color-font-secondary;
+        font-size: 20px;
+
+        &__circle{
+            transform: rotate(0turn);
+            transition: all $meal-valid-duration;
+        }
+    }
+}

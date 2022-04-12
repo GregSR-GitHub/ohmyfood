@@ -1,0 +1,31 @@
+//Variables//
+
+// Colors //
+$color-backgnd-primary: #fff;
+$color-backgnd-secondary: #f6f6f6;
+$color-backgnd-tertiary: #353535;
+$color-backgnd-quaternary: #eaeaea;
+$color-backgnd-loading: $color-backgnd-primary;
+$color-font-primary: #000;
+$color-font-secondary: #fff;
+$color-font-tertiary:#7e7e7e;
+$color-primary: #9356DC;
+$color-secondary: #FF79DA;
+$color-tertiary: #99E2D0;
+$color-primary-lighten: lighten($color-primary, 6%);
+$color-secondary-lighten: lighten($color-secondary, 5%);
+$color-third-step: mix($color-backgnd-secondary, $color-primary, $weight: 90%);
+
+// Font Size //
+
+// Dimensions //
+
+$desktop-width: 992px;
+$tablette-width: 850px;
+$breakpoints: (tablet: 769px, desktop: 993px);
+$maxwidth: (tablet: $tablette-width, desktop: $desktop-width);
+
+// Timing //
+$menu-intro-delay: 150ms;
+$meal-valid-duration: 500ms;
+$loading-duration: 2000ms;

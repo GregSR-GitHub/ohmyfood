@@ -1,0 +1,67 @@
+//Mixin//
+
+@mixin home-shadow{
+    box-shadow: 0px 6px 12px darken($color-backgnd-primary,15%);
+}
+
+@mixin circle($dim){
+    width: $dim;
+    height: $dim;
+    border-radius: calc($dim/2);
+}
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin fixed-center{
+    position: fixed;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+
+@mixin ellipsis{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+@mixin border-radius-topbot($brtop, $brbot) {
+    border-radius: $brtop $brtop $brbot $brbot;
+}
+
+@mixin img-fit($img-height){
+    height: $img-height;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+@mixin version($screen){
+    @media screen and (min-width: map-get($breakpoints, $screen)) {
+        @content;
+    }
+}
+
+@mixin version-maxw($screen){
+    @include version($screen) {
+        max-width: map-get($maxwidth, $screen);
+        @content;
+    }
+}
+
+//Placeholder//
+
+%flex-column {
+    display: flex;
+    flex-direction: column;
+}
+%flex-spacebetween {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+
+}
