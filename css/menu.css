@@ -27,17 +27,6 @@ a {
   text-decoration: none;
 }
 
-footer ul, footer, .command, .menu__list {
-  display: flex;
-  flex-direction: column;
-}
-
-.menu-title, .meal__end {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-}
-
 @-webkit-keyframes loading-visibility {
   99% {
     opacity: 0;
@@ -193,12 +182,13 @@ footer ul, footer, .command, .menu__list {
 
 .btn {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: #fff;
   background-image: linear-gradient(to right bottom, #FF79DA, #9356DC);
   box-shadow: 0px 0px 8px #b6b6b6;
-  height: 50px;
   margin: 13px 0;
-  border-radius: 25px;
   z-index: 1;
 }
 .btn:hover::after {
@@ -206,29 +196,31 @@ footer ul, footer, .command, .menu__list {
 }
 .btn::after {
   position: absolute;
+  display: block;
+  content: "";
+  z-index: -1;
   bottom: 0;
   top: 0;
   left: 0;
   right: 0;
   background-image: linear-gradient(to right bottom, #ff93e1, #a36fe1);
   box-shadow: 0px 0px 12px #777777;
-  border-radius: 25px;
-  z-index: -1;
+  border-radius: 50px;
   opacity: 0;
-  content: "";
   transition: opacity 250ms;
 }
 
 .meal {
   position: relative;
   display: flex;
+  flex-flow: row nowrap;
   justify-content: flex-end;
-  height: 68px;
   width: 100%;
+  height: 68px;
+  border-radius: 15px;
   margin: 7px 0;
   background-color: #fff;
   box-shadow: 1px 1px 8px #dddddd;
-  border-radius: 15px;
   opacity: 1;
   overflow: hidden;
 }
@@ -266,9 +258,12 @@ footer ul, footer, .command, .menu__list {
 .meal__end {
   position: absolute;
   right: 0;
-  height: 100%;
   width: 119px;
+  height: 100%;
   border-radius: 15px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
   transform: translateX(59px);
   transition: transform 500ms;
 }
@@ -320,48 +315,54 @@ header img {
 }
 
 .top-menu {
+  background-image: url("../img/restaurants/lapalettedugout.jpg");
   position: relative;
+  width: 100%;
+  height: 255px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-.top-menu__header {
-  position: absolute;
-  bottom: 0;
+.top-menu::after {
   width: 100%;
   height: 35px;
-  background-color: #f6f6f6;
   border-radius: 38px 38px 0 0;
+  position: absolute;
+  display: block;
+  content: "";
+  z-index: 2;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background-color: #f6f6f6;
 }
 @media screen and (min-width: 769px) {
-  .top-menu__header {
+  .top-menu::after {
     max-width: 850px;
-    left: 50%;
-    transform: translate(-50%, 0);
   }
-}
-.top-menu__img {
-  height: 255px;
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
 }
 
 .menu-backnd {
   background-color: #f6f6f6;
   width: 100%;
   padding: 0 14px;
-  margin: 0;
+  margin: 0 auto;
 }
 @media screen and (min-width: 769px) {
   .menu-backnd {
     max-width: 850px;
-    margin: 0 auto;
   }
 }
 
 .menu-title {
   position: relative;
   padding-bottom: 14px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
   align-items: center;
   font-family: "Shrikhand", cursive;
 }
@@ -377,16 +378,20 @@ header img {
   text-transform: uppercase;
   font-weight: 300;
   margin: 30px 6px 26px;
-  font-size: 1em;
 }
-.menu h2:after {
+.menu h2::after {
   position: absolute;
   display: block;
+  content: "";
+  z-index: 2;
   background-color: #99E2D0;
   bottom: -8px;
   height: 3px;
   width: 40px;
-  content: "";
+}
+.menu__list {
+  display: flex;
+  flex-flow: column nowrap;
 }
 .menu ul:nth-of-type(1) .meal:nth-child(1) {
   -webkit-animation: menu-intro 800ms 150ms ease-out both;
@@ -432,13 +437,14 @@ header img {
   padding: 40px 0;
 }
 .command a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 50px;
+  width: 186px;
+  height: 50px;
+  border-radius: 25px;
 }
 
 footer {
+  display: flex;
+  flex-flow: column nowrap;
   background-color: #353535;
   color: #fff;
   padding: 25px 6%;
@@ -446,6 +452,10 @@ footer {
 footer h1 {
   font-family: "Shrikhand", cursive;
   font-size: 1.2em;
+}
+footer ul {
+  display: flex;
+  flex-flow: column nowrap;
 }
 @media screen and (min-width: 769px) {
   footer ul {

@@ -1,21 +1,20 @@
 .top-menu{
+    background-image: url('../img/restaurants/lapalettedugout.jpg');
     position: relative;
+    @include square(100%,255px);
+    @include flex-center(flex-end);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 
-    &__header{
-        position: absolute;
+    &::after{
+        @include semi-squircle(100%,35px,38px,0);
+        @include after;
         bottom: 0;
-        width: 100%;
-        height: 35px;
+        left:50%;
+        transform: translate(-50%,0);
         background-color: $color-backgnd-secondary;
-        @include border-radius-topbot(38px,0);
-        @include version-maxw(tablet) {
-            left: 50%;
-            transform: translate(-50%, 0);
-        }
-    }
-
-    &__img{
-        @include img-fit(255px);
+        @include version-maxw(tablet);
     }
 }
 
@@ -23,16 +22,14 @@
     background-color: $color-backgnd-secondary;
     width: 100%;
     padding: 0 14px;
-    margin: 0;
-    @include version-maxw(tablet) {
-        margin: 0 auto;
-    }
+    margin: 0 auto;
+    @include version-maxw(tablet);
 }
 
 .menu-title{
     position: relative;
     padding-bottom: 14px;
-    @extend %flex-spacebetween;
+    @include flex-flow(row,space-between);
     align-items: center;
     font-family: 'Shrikhand', cursive;
 
@@ -50,20 +47,17 @@
         text-transform: uppercase;
         font-weight: 300;
         margin: 30px 6px 26px;
-        font-size: 1em;
-        &:after{
-            position: absolute;
-            display: block;
+        &::after{
+            @include after;
             background-color: $color-tertiary;
             bottom: -8px;
             height: 3px;
             width: 40px;
-            content: "";
         }
     }
     
     &__list{
-        @extend %flex-column;
+        @include flex-flow;
     }
 
     @for $nu from 1 through 3 {
@@ -79,11 +73,9 @@
 
 .command{
     @include flex-center;
-    @extend %flex-column;
     padding: 40px 0;
 
     a{
-        @include flex-center;
-        padding: 10px 50px;
+        @include btn-squircle(186px,$btn-height);
     }
 }

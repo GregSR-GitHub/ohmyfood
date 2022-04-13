@@ -1,7 +1,7 @@
 // Footer //
 
 footer{
-    @extend %flex-column;
+    @include flex-flow;
     background-color: $color-backgnd-tertiary;
     color: $color-font-secondary;
     padding: 25px 6%;
@@ -12,7 +12,7 @@ footer{
     }
 
     ul{
-        @extend %flex-column;
+        @include flex-flow;
         @include version(tablet) {
             flex-flow: row wrap;
             justify-content: space-between;

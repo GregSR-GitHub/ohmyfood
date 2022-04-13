@@ -1,14 +1,11 @@
 
 .meal{
     position: relative;
-    display: flex; 
-    justify-content: flex-end; 
-    height: 68px;
-    width: 100%;
+    @include flex-flow(row,flex-end);
+    @include squircle(100%,68px,15px);
     margin: 7px 0;
     background-color: $color-backgnd-primary;
     box-shadow: 1px 1px 8px darken($color-backgnd-secondary,10%);
-    border-radius: 15px;
     opacity: 1;
     overflow: hidden;
 
@@ -43,10 +40,8 @@
 .meal__end{
     position: absolute;
     right: 0;
-    height: 100%;
-    width: 119px;
-    @extend %flex-spacebetween;
-    border-radius: 15px;
+    @include squircle(119px,100%,15px);
+    @include flex-flow(row,space-between);
     transform: translateX(59px);
     transition: transform $meal-valid-duration;
 

@@ -12,9 +12,13 @@ $color-font-tertiary:#7e7e7e;
 $color-primary: #9356DC;
 $color-secondary: #FF79DA;
 $color-tertiary: #99E2D0;
+$color-font-new: darken($color-tertiary,40%);
 $color-primary-lighten: lighten($color-primary, 6%);
 $color-secondary-lighten: lighten($color-secondary, 5%);
 $color-third-step: mix($color-backgnd-secondary, $color-primary, $weight: 90%);
+$shadow-header: 0px 3px 3px darken($color-backgnd-quaternary, 10%);
+$shadow-location: inset $shadow-header;
+$shadow-home: 0px 6px 12px darken($color-backgnd-primary,15%);
 
 // Font Size //
 
@@ -22,8 +26,11 @@ $color-third-step: mix($color-backgnd-secondary, $color-primary, $weight: 90%);
 
 $desktop-width: 992px;
 $tablette-width: 850px;
+$mobile-width: 400px;
 $breakpoints: (tablet: 769px, desktop: 993px);
 $maxwidth: (tablet: $tablette-width, desktop: $desktop-width);
+$btn-height: 50px;
+$mobile-home-padding:  44px 20px;
 
 // Timing //
 $menu-intro-delay: 150ms;

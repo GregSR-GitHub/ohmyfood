@@ -14,7 +14,7 @@ header{
 // Home page //
 
 .header--shadow{
-    box-shadow: 0px 3px 3px darken($color-backgnd-quaternary, 10%);
+    box-shadow: $shadow-header;
 }
 
 // Menu pages //

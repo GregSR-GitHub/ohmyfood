@@ -4,9 +4,9 @@
     @include flex-center;
     height: 50px;
     background-color: $color-backgnd-quaternary;
-    box-shadow: inset 0px 3px 3px darken($color-backgnd-quaternary, 10%);
+    box-shadow: $shadow-location;
     @include version-maxw(desktop) {
-        box-shadow: inset 0px 3px 3px darken($color-backgnd-quaternary, 10%), 0px 6px 12px darken($color-backgnd-primary,15%);
+        box-shadow: $shadow-location, $shadow-home;
         margin: 0 auto;
     }
     &__txt{
@@ -21,21 +21,20 @@
 // Explore section //
 
 .explore{
-    @include flex-center;
-    @extend %flex-column;
+    @include flex-center(center,column);
     background-color: $color-backgnd-secondary;
-    padding: 44px 6%;
+    padding: $mobile-home-padding;
+    margin: 0 auto;
     @include version-maxw(desktop) {
         @include border-radius-topbot(0,15px);
-        @include home-shadow;
-        margin: 0 auto;
+        box-shadow: $shadow-home;
     }
     a{
-        @include flex-center;
-        padding: 10px 22px;
+        @include btn-squircle(218px,$btn-height);
     }
     h1{
         text-align: center;
+        margin: 0px 22px;
     }
     p{
         font-size: 1.2em;
@@ -48,40 +47,33 @@
 // Functioning section //
 
 .functioning{
-    @include flex-center;
-    @extend %flex-column;
-    padding: 44px 5%;
+    @include flex-center(center,column);
+    padding: $mobile-home-padding;
     h1{
-     width: 100%;
-     max-width: 400px;
-     @include version-maxw(desktop)
+     @include mobile-maxw;
+     @include version-maxw(tablet);
     }
 }
 
 // Restaurants section //
 
 .restaurants{
-    @include flex-center;
-    @extend %flex-column;
+    @include flex-center(center,column);
     background-color: $color-backgnd-secondary;
-    padding: 44px 5%;
+    padding: $mobile-home-padding;
+    margin: 0 auto;
     @include version-maxw(desktop) {
-        border-radius: 15px 15px 0 0;
-        @include home-shadow;
-        margin: 0 auto;
-        padding: 44px 25px;
+        @include border-radius-topbot(15px,10);
+        box-shadow: $shadow-home;
     }
 
     h1{
-        width: 100%;
-        max-width: 400px;
+        @include mobile-maxw;
         @include version-maxw(tablet)
        }
     ul{
-        @extend %flex-column;
-        @include flex-center;
-        width: 100%;
-        max-width: 400px;
+        @include flex-center(center,column);
+        @include mobile-maxw;
         margin: 10px 0;
         @include version-maxw(tablet) {
             flex-flow: row wrap;

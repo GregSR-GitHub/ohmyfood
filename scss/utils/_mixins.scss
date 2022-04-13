@@ -1,19 +1,22 @@
 //Mixin//
 
-@mixin home-shadow{
-    box-shadow: 0px 6px 12px darken($color-backgnd-primary,15%);
-}
+// Positioning//
 
-@mixin circle($dim){
-    width: $dim;
-    height: $dim;
-    border-radius: calc($dim/2);
-}
-
-@mixin flex-center {
+@mixin flex-center($fcalign:center,$fccol:row) {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: $fcalign;
+    @if $fccol!=row{
+    flex-flow: column nowrap;
+    }
+}
+
+@mixin flex-flow($ffdirection:column,$ffjustify:normal){
+    display: flex;
+    flex-flow: $ffdirection nowrap;
+    @if $ffjustify!=normal {
+    justify-content: $ffjustify;
+    }
 }
 
 @mixin fixed-center{
@@ -23,21 +26,69 @@
     transform: translate(-50%,-50%);
 }
 
-@mixin ellipsis{
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+@mixin after($z:2){
+    position: absolute;
+    display: block;
+    content: '';
+    z-index:$z;
+}
+
+@mixin afterflex($cont:''){
+    position: absolute;
+    @include flex-center;
+    content: $cont;
+    z-index: 2;
+}
+
+
+// Shaping //
+
+
+@mixin square($dimx,$dimy){
+    width: $dimx;
+    height: $dimy;
+}
+
+@mixin circle($dim){
+    @include square($dim,$dim);
+    border-radius: calc($dim/2);
+}
+
+@mixin squircle($dimx,$dimy,$bord){
+    @include square($dimx,$dimy);
+    border-radius: $bord;
 }
 
 @mixin border-radius-topbot($brtop, $brbot) {
     border-radius: $brtop $brtop $brbot $brbot;
 }
 
-@mixin img-fit($img-height){
-    height: $img-height;
-    width: 100%;
+@mixin semi-squircle($dimx,$dimy,$brtop,$brbot){
+    @include square($dimx,$dimy);
+    @include border-radius-topbot($brtop, $brbot);
+}
+
+@mixin btn-squircle($dimx,$dimy){
+    @include square($dimx,$dimy);
+    border-radius: calc($dimy/2);
+}
+
+@mixin ellipsis{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+@mixin img-fit{
     object-fit: cover;
     object-position: center;
+}
+
+// Responsive //
+
+@mixin mobile-maxw{
+    width: 100%;
+    max-width: $mobile-width;
 }
 
 @mixin version($screen){
@@ -51,17 +102,4 @@
         max-width: map-get($maxwidth, $screen);
         @content;
     }
-}
-
-//Placeholder//
-
-%flex-column {
-    display: flex;
-    flex-direction: column;
-}
-%flex-spacebetween {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-
 }
