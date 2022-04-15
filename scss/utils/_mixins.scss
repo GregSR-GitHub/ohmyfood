@@ -44,14 +44,14 @@
 // Shaping //
 
 
-@mixin square($dimx,$dimy){
+@mixin square($dimx,$dimy:$dimx){
     width: $dimx;
     height: $dimy;
 }
 
-@mixin circle($dim){
-    @include square($dim,$dim);
-    border-radius: calc($dim/2);
+@mixin circle($dimx,$dimy:$dimx){
+    @include square($dimx,$dimy);
+    border-radius: calc($dimy/2);
 }
 
 @mixin squircle($dimx,$dimy,$bord){
@@ -66,11 +66,6 @@
 @mixin semi-squircle($dimx,$dimy,$brtop,$brbot){
     @include square($dimx,$dimy);
     @include border-radius-topbot($brtop, $brbot);
-}
-
-@mixin btn-squircle($dimx,$dimy){
-    @include square($dimx,$dimy);
-    border-radius: calc($dimy/2);
 }
 
 @mixin ellipsis{
@@ -97,9 +92,12 @@
     }
 }
 
-@mixin version-maxw($screen){
+@mixin version-maxw($screen,$mauto:0){
     @include version($screen) {
         max-width: map-get($maxwidth, $screen);
+        @if $mauto!=0 {
+            margin: 0 auto;
+            }
         @content;
     }
 }

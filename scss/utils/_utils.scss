@@ -16,16 +16,29 @@ $color-font-new: darken($color-tertiary,40%);
 $color-primary-lighten: lighten($color-primary, 6%);
 $color-secondary-lighten: lighten($color-secondary, 5%);
 $color-third-step: mix($color-backgnd-secondary, $color-primary, $weight: 90%);
+$color-shadow-secondary: darken($color-backgnd-secondary,10%);
 $shadow-header: 0px 3px 3px darken($color-backgnd-quaternary, 10%);
 $shadow-location: inset $shadow-header;
-$shadow-home: 0px 6px 12px darken($color-backgnd-primary,15%);
+$shadow-home: 0px 4px 12px darken($color-backgnd-primary,15%);
+$shadow-card: 0px 4px 8px $color-shadow-secondary;
+$shadow-meal: 0px 2px 6px $color-shadow-secondary;
 
 // Font Size //
+$fonts-normal: 1em;
+$fonts-big: 1.5em;
+$fonts-meal-txt: 0.9em;
+
+// Images //
+$menu-01: 'lapalettedugout';
+$menu-02: 'lanoteenchantee';
+$menu-03: 'alafrancaise';
+$menu-04: 'ledelicedessens';
+$menu-bg: (1: $menu-01, 2: $menu-02, 3: $menu-03, 4: $menu-04) ;
 
 // Dimensions //
 
 $desktop-width: 992px;
-$tablette-width: 850px;
+$tablette-width: 875px;
 $mobile-width: 400px;
 $breakpoints: (tablet: 769px, desktop: 993px);
 $maxwidth: (tablet: $tablette-width, desktop: $desktop-width);

@@ -5,9 +5,8 @@
     height: 50px;
     background-color: $color-backgnd-quaternary;
     box-shadow: $shadow-location;
-    @include version-maxw(desktop) {
+    @include version-maxw(desktop,auto) {
         box-shadow: $shadow-location, $shadow-home;
-        margin: 0 auto;
     }
     &__txt{
         position: relative;
@@ -30,7 +29,7 @@
         box-shadow: $shadow-home;
     }
     a{
-        @include btn-squircle(218px,$btn-height);
+        @include circle(218px,$btn-height);
     }
     h1{
         text-align: center;
@@ -38,7 +37,6 @@
     }
     p{
         font-size: 1.2em;
-        font-weight: 300;
         text-align: center;
         margin: 22px 0;
     }
@@ -61,8 +59,7 @@
     @include flex-center(center,column);
     background-color: $color-backgnd-secondary;
     padding: $mobile-home-padding;
-    margin: 0 auto;
-    @include version-maxw(desktop) {
+    @include version-maxw(desktop,auto) {
         @include border-radius-topbot(15px,10);
         box-shadow: $shadow-home;
     }

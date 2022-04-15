@@ -5,7 +5,7 @@
     @include squircle(100%,68px,15px);
     margin: 7px 0;
     background-color: $color-backgnd-primary;
-    box-shadow: 1px 1px 8px darken($color-backgnd-secondary,10%);
+    box-shadow: $shadow-meal;
     opacity: 1;
     overflow: hidden;
 
@@ -27,13 +27,12 @@
     padding:14px 61px 14px 11px;
     transition: all $meal-valid-duration;
     h3{
-        font-size: 1em;
+        font-size: $fonts-normal;
         margin-bottom:6px;
         @include ellipsis;
     }
     p{
-        font-size: 0.9em;
-        font-weight: 300;
+        font-size: $fonts-meal-txt;
         @include ellipsis;
     }
 }
@@ -48,7 +47,7 @@
     &__price{
         width: 50px;
         padding:36px 10px 10px 5px;
-        font-size: 0.9em;
+        font-size: $fonts-meal-txt;
         text-align: center;
         font-weight: bold;
     
@@ -57,7 +56,6 @@
         width: 59px;
         @include flex-center;
         background-color: $color-tertiary;
-        border-radius: 0 15px 15px 0;
         color: $color-font-secondary;
         font-size: 20px;
 

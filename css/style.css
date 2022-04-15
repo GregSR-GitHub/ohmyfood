@@ -23,6 +23,10 @@ h2 {
   font-size: 1em;
 }
 
+p {
+  font-weight: 300;
+}
+
 a {
   text-decoration: none;
 }
@@ -217,7 +221,7 @@ a {
 }
 @media screen and (min-width: 769px) {
   .steps {
-    max-width: 850px;
+    max-width: 875px;
     display: flex;
     justify-content: space-between;
   }
@@ -242,7 +246,7 @@ a {
   height: 72px;
   margin: 0 0 25px 12px;
   border-radius: 12px;
-  box-shadow: 0px 6px 12px #d9d9d9;
+  box-shadow: 0px 4px 12px #d9d9d9;
 }
 @media screen and (min-width: 769px) {
   .steps__list {
@@ -314,7 +318,7 @@ a {
 @media screen and (min-width: 769px) {
   .card {
     width: 48.5%;
-    max-width: 410px;
+    max-width: 420px;
   }
 }
 .card > a {
@@ -339,9 +343,6 @@ a {
 }
 .card__infos h2, .card__infos p {
   margin: 4px 0;
-}
-.card__infos p {
-  font-weight: 300;
 }
 
 .new::after {
@@ -381,7 +382,6 @@ a {
   border-radius: 80px;
   background: linear-gradient(to right bottom, #FF79DA, #9356DC);
   background-color: #9356DC;
-  box-shadow: 0 0 15px #fff;
   -webkit-animation: loading-circle 400ms linear infinite;
           animation: loading-circle 400ms linear infinite;
 }
@@ -471,8 +471,8 @@ header img {
 @media screen and (min-width: 993px) {
   .location {
     max-width: 992px;
-    box-shadow: inset 0px 3px 3px #d1d1d1, 0px 6px 12px #d9d9d9;
     margin: 0 auto;
+    box-shadow: inset 0px 3px 3px #d1d1d1, 0px 4px 12px #d9d9d9;
   }
 }
 .location__txt {
@@ -496,7 +496,7 @@ header img {
   .explore {
     max-width: 992px;
     border-radius: 0 0 15px 15px;
-    box-shadow: 0px 6px 12px #d9d9d9;
+    box-shadow: 0px 4px 12px #d9d9d9;
   }
 }
 .explore a {
@@ -510,7 +510,6 @@ header img {
 }
 .explore p {
   font-size: 1.2em;
-  font-weight: 300;
   text-align: center;
   margin: 22px 0;
 }
@@ -528,7 +527,7 @@ header img {
 }
 @media screen and (min-width: 769px) {
   .functioning h1 {
-    max-width: 850px;
+    max-width: 875px;
   }
 }
 
@@ -539,13 +538,13 @@ header img {
   flex-flow: column nowrap;
   background-color: #f6f6f6;
   padding: 44px 20px;
-  margin: 0 auto;
 }
 @media screen and (min-width: 993px) {
   .restaurants {
     max-width: 992px;
+    margin: 0 auto;
     border-radius: 15px 15px 10 10;
-    box-shadow: 0px 6px 12px #d9d9d9;
+    box-shadow: 0px 4px 12px #d9d9d9;
   }
 }
 .restaurants h1 {
@@ -554,7 +553,7 @@ header img {
 }
 @media screen and (min-width: 769px) {
   .restaurants h1 {
-    max-width: 850px;
+    max-width: 875px;
   }
 }
 .restaurants ul {
@@ -568,7 +567,7 @@ header img {
 }
 @media screen and (min-width: 769px) {
   .restaurants ul {
-    max-width: 850px;
+    max-width: 875px;
     flex-flow: row wrap;
     justify-content: space-between;
   }

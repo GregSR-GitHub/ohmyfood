@@ -9,7 +9,7 @@
     max-width: $mobile-width;
     @include version(tablet) {
         width: 48.5%;
-        max-width: calc($mobile-width*1.025);
+        max-width: calc($mobile-width*1.05);
     }
     &>a{
         height: 174px;
@@ -25,9 +25,6 @@
         @include semi-squircle(100%,77px,0,15px);
         h2,p{
             margin: 4px 0;
-        }
-        p{
-            font-weight: 300;
         }
     }
 }

@@ -23,6 +23,10 @@ h2 {
   font-size: 1em;
 }
 
+p {
+  font-weight: 300;
+}
+
 a {
   text-decoration: none;
 }
@@ -220,7 +224,7 @@ a {
   border-radius: 15px;
   margin: 7px 0;
   background-color: #fff;
-  box-shadow: 1px 1px 8px #dddddd;
+  box-shadow: 0px 2px 6px #dddddd;
   opacity: 1;
   overflow: hidden;
 }
@@ -249,7 +253,6 @@ a {
 }
 .meal__infos p {
   font-size: 0.9em;
-  font-weight: 300;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -280,7 +283,6 @@ a {
   justify-content: center;
   align-items: center;
   background-color: #99E2D0;
-  border-radius: 0 15px 15px 0;
   color: #fff;
   font-size: 20px;
 }
@@ -315,7 +317,6 @@ header img {
 }
 
 .top-menu {
-  background-image: url("../img/restaurants/lapalettedugout.jpg");
   position: relative;
   width: 100%;
   height: 255px;
@@ -339,21 +340,38 @@ header img {
   transform: translate(-50%, 0);
   background-color: #f6f6f6;
 }
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 993px) {
   .top-menu::after {
-    max-width: 850px;
+    max-width: 992px;
   }
+}
+
+.top-menu--1 {
+  background-image: url("../img/restaurants/lapalettedugout.jpg");
+}
+
+.top-menu--2 {
+  background-image: url("../img/restaurants/lanoteenchantee.jpg");
+}
+
+.top-menu--3 {
+  background-image: url("../img/restaurants/alafrancaise.jpg");
+}
+
+.top-menu--4 {
+  background-image: url("../img/restaurants/ledelicedessens.jpg");
 }
 
 .menu-backnd {
   background-color: #f6f6f6;
   width: 100%;
   padding: 0 14px;
-  margin: 0 auto;
 }
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 993px) {
   .menu-backnd {
-    max-width: 850px;
+    max-width: 992px;
+    margin: 0 auto;
+    box-shadow: 0px 4px 12px #d9d9d9;
   }
 }
 
@@ -366,6 +384,12 @@ header img {
   align-items: center;
   font-family: "Shrikhand", cursive;
 }
+@media screen and (min-width: 769px) {
+  .menu-title {
+    max-width: 875px;
+    margin: 0 auto;
+  }
+}
 .menu-title .heart {
   position: relative;
   right: 0px;
@@ -373,6 +397,12 @@ header img {
   margin-right: 24px;
 }
 
+@media screen and (min-width: 769px) {
+  .menu {
+    max-width: 875px;
+    margin: 0 auto;
+  }
+}
 .menu h2 {
   position: relative;
   text-transform: uppercase;
@@ -384,10 +414,10 @@ header img {
   display: block;
   content: "";
   z-index: 2;
+  width: 40px;
+  height: 3px;
   background-color: #99E2D0;
   bottom: -8px;
-  height: 3px;
-  width: 40px;
 }
 .menu__list {
   display: flex;
@@ -405,6 +435,10 @@ header img {
   -webkit-animation: menu-intro 800ms 450ms ease-out both;
           animation: menu-intro 800ms 450ms ease-out both;
 }
+.menu ul:nth-of-type(1) .meal:nth-child(4) {
+  -webkit-animation: menu-intro 800ms 600ms ease-out both;
+          animation: menu-intro 800ms 600ms ease-out both;
+}
 .menu ul:nth-of-type(2) .meal:nth-child(1) {
   -webkit-animation: menu-intro 800ms 600ms ease-out both;
           animation: menu-intro 800ms 600ms ease-out both;
@@ -417,6 +451,10 @@ header img {
   -webkit-animation: menu-intro 800ms 900ms ease-out both;
           animation: menu-intro 800ms 900ms ease-out both;
 }
+.menu ul:nth-of-type(2) .meal:nth-child(4) {
+  -webkit-animation: menu-intro 800ms 1050ms ease-out both;
+          animation: menu-intro 800ms 1050ms ease-out both;
+}
 .menu ul:nth-of-type(3) .meal:nth-child(1) {
   -webkit-animation: menu-intro 800ms 1050ms ease-out both;
           animation: menu-intro 800ms 1050ms ease-out both;
@@ -428,6 +466,10 @@ header img {
 .menu ul:nth-of-type(3) .meal:nth-child(3) {
   -webkit-animation: menu-intro 800ms 1350ms ease-out both;
           animation: menu-intro 800ms 1350ms ease-out both;
+}
+.menu ul:nth-of-type(3) .meal:nth-child(4) {
+  -webkit-animation: menu-intro 800ms 1500ms ease-out both;
+          animation: menu-intro 800ms 1500ms ease-out both;
 }
 
 .command {

@@ -1,5 +1,4 @@
 .top-menu{
-    background-image: url('../img/restaurants/lapalettedugout.jpg');
     position: relative;
     @include square(100%,255px);
     @include flex-center(flex-end);
@@ -14,16 +13,23 @@
         left:50%;
         transform: translate(-50%,0);
         background-color: $color-backgnd-secondary;
-        @include version-maxw(tablet);
+        @include version-maxw(desktop);
     }
 }
+
+@each $mn, $mbg in $menu-bg {
+    .top-menu--#{$mn} {
+        background-image: url('../img/restaurants/#{$mbg}.jpg');
+    }
+  }
 
 .menu-backnd{
     background-color: $color-backgnd-secondary;
     width: 100%;
     padding: 0 14px;
-    margin: 0 auto;
-    @include version-maxw(tablet);
+    @include version-maxw(desktop,auto){
+        box-shadow: $shadow-home;
+    }
 }
 
 .menu-title{
@@ -32,6 +38,7 @@
     @include flex-flow(row,space-between);
     align-items: center;
     font-family: 'Shrikhand', cursive;
+    @include version-maxw(tablet,auto);
 
     .heart{
         position: relative;
@@ -42,6 +49,8 @@
 }
 
 .menu{
+    @include version-maxw(tablet,auto);
+
     h2{ 
         position: relative;
         text-transform: uppercase;
@@ -49,10 +58,9 @@
         margin: 30px 6px 26px;
         &::after{
             @include after;
+            @include square(40px,3px);
             background-color: $color-tertiary;
             bottom: -8px;
-            height: 3px;
-            width: 40px;
         }
     }
     
@@ -62,7 +70,7 @@
 
     @for $nu from 1 through 3 {
         & ul:nth-of-type(#{$nu}){
-            @for $n from 1 through 3 {
+            @for $n from 1 through 4 {
                 & .meal:nth-child(#{$n}){
                     animation: menu-intro 800ms (($menu-intro-delay*$n)+(($menu-intro-delay*3)*(($nu)-1))) ease-out both;
                 }
@@ -76,6 +84,6 @@
     padding: 40px 0;
 
     a{
-        @include btn-squircle(186px,$btn-height);
+        @include circle(186px,$btn-height);
     }
 }
