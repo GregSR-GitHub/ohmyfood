@@ -1,36 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap");
-html {
-  font-family: "Roboto", Verdana, sans-serif;
-  font-size: 1em;
-}
-
-*, h1, h2, h3 {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-ul {
-  list-style-type: none;
-}
-
-h1 {
-  font-size: 1.5em;
-}
-
-h2 {
-  font-size: 1em;
-}
-
-p {
-  font-weight: 300;
-}
-
-a {
-  text-decoration: none;
-}
-
 @-webkit-keyframes loading-visibility {
   99% {
     opacity: 0;
@@ -41,7 +10,6 @@ a {
     opacity: 0;
   }
 }
-
 @keyframes loading-visibility {
   99% {
     opacity: 0;
@@ -152,6 +120,82 @@ a {
     transform: translateY(0);
   }
 }
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+html {
+  font-family: "Roboto", Verdana, sans-serif;
+  font-size: 1em;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 1.5em;
+}
+
+p {
+  font-weight: 300;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
 .heart {
   position: absolute;
   right: 23px;
@@ -203,10 +247,10 @@ a {
   display: block;
   content: "";
   z-index: -1;
-  bottom: 0;
   top: 0;
   left: 0;
-  right: 0;
+  width: 100%;
+  height: 100%;
   background-image: linear-gradient(to right bottom, #ff93e1, #a36fe1);
   box-shadow: 0px 0px 12px #777777;
   border-radius: 50px;
@@ -214,14 +258,32 @@ a {
   transition: opacity 250ms;
 }
 
-.meal {
+.meal-type {
   position: relative;
+  text-transform: uppercase;
+  font-weight: 300;
+  margin: 30px 6px 26px;
+}
+.meal-type::after {
+  position: absolute;
+  display: block;
+  content: "";
+  z-index: 2;
+  width: 40px;
+  height: 3px;
+  background-color: #99E2D0;
+  bottom: -8px;
+}
+
+.meal {
   display: flex;
-  flex-flow: row nowrap;
   justify-content: flex-end;
+  align-items: center;
+  flex-flow: row nowrap;
   width: 100%;
   height: 68px;
   border-radius: 15px;
+  position: relative;
   margin: 7px 0;
   background-color: #fff;
   box-shadow: 0px 2px 6px #dddddd;
@@ -245,7 +307,7 @@ a {
   transition: all 500ms;
 }
 .meal__infos h3 {
-  font-size: 1em;
+  font-weight: bold;
   margin-bottom: 6px;
   overflow: hidden;
   white-space: nowrap;
@@ -259,14 +321,14 @@ a {
 }
 
 .meal__end {
-  position: absolute;
-  right: 0;
   width: 119px;
   height: 100%;
   border-radius: 15px;
   display: flex;
+  justify-content: flex-end;
   flex-flow: row nowrap;
-  justify-content: space-between;
+  position: absolute;
+  right: 0;
   transform: translateX(59px);
   transition: transform 500ms;
 }
@@ -278,10 +340,10 @@ a {
   font-weight: bold;
 }
 .meal__end__valid {
-  width: 59px;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 59px;
   background-color: #99E2D0;
   color: #fff;
   font-size: 20px;
@@ -310,10 +372,9 @@ header img {
 
 .retour {
   position: absolute;
-  margin-top: 10px;
   left: 18px;
+  margin-top: 10px;
   font-size: 20px;
-  color: #000;
 }
 
 .top-menu {
@@ -363,25 +424,22 @@ header img {
 }
 
 .menu-backnd {
-  background-color: #f6f6f6;
   width: 100%;
   padding: 0 14px;
+  background-color: #f6f6f6;
 }
 @media screen and (min-width: 993px) {
   .menu-backnd {
     max-width: 992px;
     margin: 0 auto;
     box-shadow: 0px 4px 12px #d9d9d9;
+    border-radius: 0 0 0 0;
   }
 }
 
 .menu-title {
   position: relative;
   padding-bottom: 14px;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-items: center;
   font-family: "Shrikhand", cursive;
 }
 @media screen and (min-width: 769px) {
@@ -391,10 +449,7 @@ header img {
   }
 }
 .menu-title .heart {
-  position: relative;
-  right: 0px;
   top: 0px;
-  margin-right: 24px;
 }
 
 @media screen and (min-width: 769px) {
@@ -402,22 +457,6 @@ header img {
     max-width: 875px;
     margin: 0 auto;
   }
-}
-.menu h2 {
-  position: relative;
-  text-transform: uppercase;
-  font-weight: 300;
-  margin: 30px 6px 26px;
-}
-.menu h2::after {
-  position: absolute;
-  display: block;
-  content: "";
-  z-index: 2;
-  width: 40px;
-  height: 3px;
-  background-color: #99E2D0;
-  bottom: -8px;
 }
 .menu__list {
   display: flex;
@@ -493,7 +532,7 @@ footer {
 }
 footer h1 {
   font-family: "Shrikhand", cursive;
-  font-size: 1.2em;
+  font-size: 20px;
 }
 footer ul {
   display: flex;
@@ -501,6 +540,7 @@ footer ul {
 }
 @media screen and (min-width: 769px) {
   footer ul {
+    max-width: 875px;
     flex-flow: row wrap;
     justify-content: space-between;
     max-width: 600px;

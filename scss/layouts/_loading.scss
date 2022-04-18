@@ -1,9 +1,9 @@
 // Loading //
 
 .loading{
-    position: fixed;
-    @include flex-center;
+    @include flex-justify;
     @include square(100%);
+    position: fixed;
     z-index: 99;
     background-color: $color-backgnd-loading;
     overflow: hidden;
@@ -18,8 +18,8 @@
     &__backgnd--secondary{
         @include circle(160px);
         background-color: $color-backgnd-loading;
-        border-top: 3px $color-primary solid;
-        border-right: 3px $color-primary solid;
+        border-top: $border-loading-circle;
+        border-right: $border-loading-circle;
         opacity: 1;
         animation: change-circle $loading-duration ease-in both;
     }
@@ -27,18 +27,18 @@
 
 .loading-border{
     @include fixed-center;
-    background-color: $color-backgnd-loading;
     @include circle(180px);
+    background-color: $color-backgnd-loading;
     border: 1px $color-primary solid;
 }
 
 .loading-bar{
+    @include square(100%,1px);
     position: fixed;
     top:50%;
     left:0;
     background-color: $color-primary;
     box-shadow: 0 0 5px $color-secondary;
-    @include square(100%,1px);
     animation: loading-bar $loading-duration ease-in both;
     transform-origin: left;
 

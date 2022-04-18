@@ -1,39 +1,29 @@
-// Location //
+// General //
 
-.location{
-    @include flex-center;
-    height: 50px;
-    background-color: $color-backgnd-quaternary;
-    box-shadow: $shadow-location;
-    @include version-maxw(desktop,auto) {
-        box-shadow: $shadow-location, $shadow-home;
-    }
-    &__txt{
-        position: relative;
-        &__icon{
-            position: absolute;
-            left: -30px;
-        }
-    }
+.home-block{
+    @include flex-justify($fj-dir:column);
+    padding: $mobile-home-padding;
+}
+
+.home-title{
+    @include mobile-maxw;
+    @include version-maxw(tablet);
+    font-weight: bold;
+    margin: 10px 0;
 }
 
 // Explore section //
 
 .explore{
-    @include flex-center(center,column);
-    background-color: $color-backgnd-secondary;
-    padding: $mobile-home-padding;
-    margin: 0 auto;
-    @include version-maxw(desktop) {
-        @include border-radius-topbot(0,15px);
-        box-shadow: $shadow-home;
-    }
+    @include backnd-secondary(0,15px);
+
     a{
         @include circle(218px,$btn-height);
     }
     h1{
         text-align: center;
         margin: 0px 22px;
+        font-weight: bold;
     }
     p{
         font-size: 1.2em;
@@ -42,34 +32,13 @@
     }
 }
 
-// Functioning section //
-
-.functioning{
-    @include flex-center(center,column);
-    padding: $mobile-home-padding;
-    h1{
-     @include mobile-maxw;
-     @include version-maxw(tablet);
-    }
-}
-
 // Restaurants section //
 
 .restaurants{
-    @include flex-center(center,column);
-    background-color: $color-backgnd-secondary;
-    padding: $mobile-home-padding;
-    @include version-maxw(desktop,auto) {
-        @include border-radius-topbot(15px,10);
-        box-shadow: $shadow-home;
-    }
+    @include backnd-secondary(15px,0);
 
-    h1{
-        @include mobile-maxw;
-        @include version-maxw(tablet)
-       }
     ul{
-        @include flex-center(center,column);
+        @include flex-justify($fj-dir:column);
         @include mobile-maxw;
         margin: 10px 0;
         @include version-maxw(tablet) {

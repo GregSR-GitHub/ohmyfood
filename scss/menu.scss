@@ -1,14 +1,16 @@
-//Bases
-@import "./base/base";
-
 //Variable, Mixin & Placeholder//
 @import "./utils/utils";
 @import "./utils/mixins";
 @import "./utils/keyframes";
 
+//Bases
+@import "./base/reset";
+@import "./base/base";
+
 //Components//
 @import "./components/heart";
 @import "./components/btn";
+@import "./components/mealtype";
 @import "./components/meal";
 
 //Header//

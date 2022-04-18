@@ -4,7 +4,7 @@ header{
     position: relative;
     height: 63px;
     background-color: $color-backgnd-primary;
-    @include flex-center;
+    @include flex-justify;
     img{
         width: 164px;
         margin-top: 10px;
@@ -20,10 +20,7 @@ header{
 // Menu pages //
 
 .retour{
-    position: absolute;
+    @include absolute-left(18px);
     margin-top: 10px;
-    left: 18px;
     font-size: 20px;
-    color: $color-font-primary;
-
 }

@@ -2,21 +2,22 @@
 
 // Positioning//
 
-@mixin flex-center($fcalign:center,$fccol:row) {
+@mixin flex-justify($fj-justify:center,$fj-dir:none,$fj-align:center) {
     display: flex;
-    justify-content: center;
-    align-items: $fcalign;
-    @if $fccol!=row{
-    flex-flow: column nowrap;
+    justify-content: $fj-justify;
+    @if $fj-align!=none{
+        align-items: $fj-align;
+    }
+    @if $fj-dir==row{
+        flex-flow: row nowrap;
+    } @else if $fj-dir==column{
+        flex-flow: column nowrap;
     }
 }
 
-@mixin flex-flow($ffdirection:column,$ffjustify:normal){
+@mixin flex-column{
     display: flex;
-    flex-flow: $ffdirection nowrap;
-    @if $ffjustify!=normal {
-    justify-content: $ffjustify;
-    }
+    flex-flow: column nowrap;
 }
 
 @mixin fixed-center{
@@ -24,6 +25,14 @@
     top:50%;
     left:50%;
     transform: translate(-50%,-50%);
+}
+
+@mixin absolute-left($posleft:0,$postop:none){
+    position: absolute;
+    left: $posleft;
+    @if $postop!=none{
+        top: $postop;   
+    }
 }
 
 @mixin after($z:2){
@@ -35,11 +44,10 @@
 
 @mixin afterflex($cont:''){
     position: absolute;
-    @include flex-center;
+    @include flex-justify;
     content: $cont;
     z-index: 2;
 }
-
 
 // Shaping //
 
@@ -74,11 +82,6 @@
     text-overflow: ellipsis;
 }
 
-@mixin img-fit{
-    object-fit: cover;
-    object-position: center;
-}
-
 // Responsive //
 
 @mixin mobile-maxw{
@@ -99,5 +102,15 @@
             margin: 0 auto;
             }
         @content;
+    }
+}
+
+@mixin backnd-secondary($brtop:0, $brbot:0){
+    background-color: $color-backgnd-secondary;
+    @include version-maxw(desktop,auto) {
+        box-shadow: $shadow-home;
+        @if (($brtop!=0)OR($brbot!=0)){
+            @include border-radius-topbot($brtop,$brbot);
+        }
     }
 }

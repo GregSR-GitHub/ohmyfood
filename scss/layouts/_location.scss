@@ -1,0 +1,17 @@
+// Location //
+
+.location{
+    @include flex-justify;
+    height: 50px;
+    background-color: $color-backgnd-quaternary;
+    box-shadow: $shadow-location;
+    @include version-maxw(desktop,auto) {
+        box-shadow: $shadow-location, $shadow-home;
+    }
+    &__txt{
+        position: relative;
+        &__icon{
+            @include absolute-left(-30%);
+        }
+    }
+}

@@ -17,15 +17,20 @@ $color-primary-lighten: lighten($color-primary, 6%);
 $color-secondary-lighten: lighten($color-secondary, 5%);
 $color-third-step: mix($color-backgnd-secondary, $color-primary, $weight: 90%);
 $color-shadow-secondary: darken($color-backgnd-secondary,10%);
+
+// Shadows & Border //
+
 $shadow-header: 0px 3px 3px darken($color-backgnd-quaternary, 10%);
 $shadow-location: inset $shadow-header;
 $shadow-home: 0px 4px 12px darken($color-backgnd-primary,15%);
 $shadow-card: 0px 4px 8px $color-shadow-secondary;
 $shadow-meal: 0px 2px 6px $color-shadow-secondary;
+$border-loading-circle: 3px $color-primary solid;
 
 // Font Size //
 $fonts-normal: 1em;
 $fonts-big: 1.5em;
+$fonts-small: 0.9em;
 $fonts-meal-txt: 0.9em;
 
 // Images //
@@ -47,5 +52,6 @@ $mobile-home-padding:  44px 20px;
 
 // Timing //
 $menu-intro-delay: 150ms;
+$menu-intro-duration: 800ms;
 $meal-valid-duration: 500ms;
 $loading-duration: 2000ms;

@@ -1,11 +1,11 @@
 // Card //
 
 .card{
-    @include flex-flow;
+    @include flex-column;
+    @include squircle(100%,251px,15px);
     position: relative;
     margin: 9px 0;
     box-shadow: 0px 4px 8px darken($color-backgnd-secondary,10%);
-    @include squircle(100%,251px,15px);
     max-width: $mobile-width;
     @include version(tablet) {
         width: 48.5%;
@@ -15,16 +15,21 @@
         height: 174px;
     }
     img{
-        @include img-fit;
+        object-fit: cover;
+        object-position: center;
         @include semi-squircle(100%,174px,15px,0);
     }
     &__infos{
-        background-color: $color-backgnd-primary;
-        position: relative;
-        padding: 14px;
         @include semi-squircle(100%,77px,0,15px);
+        position: relative;
+        background-color: $color-backgnd-primary;
+        padding: 14px;
+        
         h2,p{
             margin: 4px 0;
+        }
+        h2{
+            font-weight: bold;
         }
     }
 }

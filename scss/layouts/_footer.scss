@@ -1,19 +1,19 @@
 // Footer //
 
 footer{
-    @include flex-flow;
+    @include flex-column;
     background-color: $color-backgnd-tertiary;
     color: $color-font-secondary;
     padding: 25px 6%;
 
     h1{
         font-family: 'Shrikhand', cursive;
-        font-size: 1.2em;
+        font-size: 20px;
     }
 
     ul{
-        @include flex-flow;
-        @include version(tablet) {
+        @include flex-column;
+        @include version-maxw(tablet) {
             flex-flow: row wrap;
             justify-content: space-between;
             max-width: 600px;

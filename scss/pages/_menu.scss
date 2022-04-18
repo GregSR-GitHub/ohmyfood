@@ -1,7 +1,7 @@
 .top-menu{
     position: relative;
     @include square(100%,255px);
-    @include flex-center(flex-end);
+    @include flex-justify($fj-align:flex-end);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -24,55 +24,34 @@
   }
 
 .menu-backnd{
-    background-color: $color-backgnd-secondary;
     width: 100%;
     padding: 0 14px;
-    @include version-maxw(desktop,auto){
-        box-shadow: $shadow-home;
-    }
+    @include backnd-secondary;
 }
 
 .menu-title{
     position: relative;
     padding-bottom: 14px;
-    @include flex-flow(row,space-between);
-    align-items: center;
     font-family: 'Shrikhand', cursive;
     @include version-maxw(tablet,auto);
 
     .heart{
-        position: relative;
-        right: 0px;
         top: 0px;
-        margin-right: 24px;
     }
 }
 
 .menu{
     @include version-maxw(tablet,auto);
 
-    h2{ 
-        position: relative;
-        text-transform: uppercase;
-        font-weight: 300;
-        margin: 30px 6px 26px;
-        &::after{
-            @include after;
-            @include square(40px,3px);
-            background-color: $color-tertiary;
-            bottom: -8px;
-        }
-    }
-    
     &__list{
-        @include flex-flow;
+        @include flex-column;
     }
 
     @for $nu from 1 through 3 {
         & ul:nth-of-type(#{$nu}){
             @for $n from 1 through 4 {
                 & .meal:nth-child(#{$n}){
-                    animation: menu-intro 800ms (($menu-intro-delay*$n)+(($menu-intro-delay*3)*(($nu)-1))) ease-out both;
+                    animation: menu-intro $menu-intro-duration (($menu-intro-delay*$n)+(($menu-intro-delay*3)*(($nu)-1))) ease-out both;
                 }
             }
         }
@@ -80,7 +59,7 @@
 }
 
 .command{
-    @include flex-center;
+    @include flex-justify;
     padding: 40px 0;
 
     a{

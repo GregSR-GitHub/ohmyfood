@@ -1,8 +1,8 @@
 
 .meal{
-    position: relative;
-    @include flex-flow(row,flex-end);
+    @include flex-justify(flex-end,row);
     @include squircle(100%,68px,15px);
+    position: relative;
     margin: 7px 0;
     background-color: $color-backgnd-primary;
     box-shadow: $shadow-meal;
@@ -27,7 +27,7 @@
     padding:14px 61px 14px 11px;
     transition: all $meal-valid-duration;
     h3{
-        font-size: $fonts-normal;
+        font-weight: bold;
         margin-bottom:6px;
         @include ellipsis;
     }
@@ -37,10 +37,10 @@
     }
 }
 .meal__end{
+    @include squircle(119px,100%,15px);
+    @include flex-justify(flex-end,row,none);
     position: absolute;
     right: 0;
-    @include squircle(119px,100%,15px);
-    @include flex-flow(row,space-between);
     transform: translateX(59px);
     transition: transform $meal-valid-duration;
 
@@ -53,8 +53,8 @@
     
     }
     &__valid{
+        @include flex-justify;
         width: 59px;
-        @include flex-center;
         background-color: $color-tertiary;
         color: $color-font-secondary;
         font-size: 20px;

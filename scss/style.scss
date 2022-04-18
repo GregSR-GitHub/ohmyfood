@@ -1,10 +1,11 @@
-//Bases
-@import "./base/base";
-
 //Variable, Mixin & Placeholder//
 @import "./utils/utils";
 @import "./utils/mixins";
 @import "./utils/keyframes";
+
+//Bases
+@import "./base/reset";
+@import "./base/base";
 
 //Components//
 @import "./components/heart";
@@ -18,7 +19,8 @@
 //Header//
 @import "./layouts/header";
 
-// Home page //
+// Page //
+@import "./layouts/location";
 @import "./pages/home";
 
 // Footer //

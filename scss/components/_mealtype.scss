@@ -1,0 +1,12 @@
+.meal-type{ 
+    position: relative;
+    text-transform: uppercase;
+    font-weight: 300;
+    margin: 30px 6px 26px;
+    &::after{
+        @include after;
+        @include square(40px,3px);
+        background-color: $color-tertiary;
+        bottom: -8px;
+    }
+}
