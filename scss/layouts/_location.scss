@@ -8,8 +8,10 @@
     @include version-maxw(desktop,auto) {
         box-shadow: $shadow-location, $shadow-home;
     }
+
     &__txt{
         position: relative;
+        
         &__icon{
             @include absolute-left(-30%);
         }

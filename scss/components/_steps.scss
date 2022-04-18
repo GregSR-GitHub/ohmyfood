@@ -29,6 +29,7 @@
     @include version(tablet) {
         @include square(30%,95px);
     }
+
     &--third{
         background-color: $color-third-step;
     }
@@ -48,6 +49,7 @@
         background-color: $color-backgnd-primary;
         border: 3px $color-backgnd-secondary solid;
     }
+    
     &--third{
         color: $color-primary;    
         @include version(tablet) {

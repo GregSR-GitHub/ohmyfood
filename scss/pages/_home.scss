@@ -20,11 +20,13 @@
     a{
         @include circle(218px,$btn-height);
     }
+
     h1{
         text-align: center;
         margin: 0px 22px;
         font-weight: bold;
     }
+    
     p{
         font-size: 1.2em;
         text-align: center;

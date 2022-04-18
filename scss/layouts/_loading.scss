@@ -15,6 +15,7 @@
     background:  linear-gradient(to right bottom, $color-secondary, $color-primary);
     background-color: $color-primary;
     animation: loading-circle 400ms linear infinite;
+    
     &__backgnd--secondary{
         @include circle(160px);
         background-color: $color-backgnd-loading;

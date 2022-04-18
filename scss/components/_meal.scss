@@ -1,3 +1,4 @@
+// Meals //
 
 .meal{
     @include flex-justify(flex-end,row);
@@ -9,13 +10,14 @@
     opacity: 1;
     overflow: hidden;
 
-
     &:hover .meal__end{
         transform: translateX(0);
     }
+
     &:hover .meal__end__valid__circle{
         transform: rotate(1turn);
     }
+
     &:hover .meal__infos{
         padding-right: 120px;
     }
@@ -26,6 +28,7 @@
     flex: 1;
     padding:14px 61px 14px 11px;
     transition: all $meal-valid-duration;
+
     h3{
         font-weight: bold;
         margin-bottom:6px;
@@ -52,6 +55,7 @@
         font-weight: bold;
     
     }
+
     &__valid{
         @include flex-justify;
         width: 59px;

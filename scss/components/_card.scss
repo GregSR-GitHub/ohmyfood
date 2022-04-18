@@ -11,14 +11,17 @@
         width: 48.5%;
         max-width: calc($mobile-width*1.05);
     }
+
     &>a{
         height: 174px;
     }
+
     img{
         object-fit: cover;
         object-position: center;
         @include semi-squircle(100%,174px,15px,0);
     }
+
     &__infos{
         @include semi-squircle(100%,77px,0,15px);
         position: relative;
@@ -33,6 +36,7 @@
         }
     }
 }
+
 .new{
     &::after{
         @include squircle(80px,30px,5px);
