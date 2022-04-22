@@ -107,12 +107,8 @@
     }
 }
 
-@mixin backnd-secondary($brtop:0, $brbot:0){
-    background-color: $color-backgnd-secondary;
+@mixin version-maxw-border($brtop:0, $brbot:0){
     @include version-maxw(desktop,auto) {
-        box-shadow: $shadow-home;
-        @if (($brtop!=0)OR($brbot!=0)){
-            @include border-radius-topbot($brtop,$brbot);
-        }
+        @include border-radius-topbot($brtop,$brbot);
     }
 }

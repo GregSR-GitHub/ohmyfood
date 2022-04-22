@@ -14,7 +14,7 @@
 // Explore section //
 
 .explore{
-    @include backnd-secondary(0,15px);
+    @include version-maxw-border(0,15px);
     text-align: center;
     a{
         @include circle(218px,$btn-height);
@@ -33,7 +33,7 @@
 // Restaurants section //
 
 .restaurants{
-    @include backnd-secondary(15px,0);
+    @include version-maxw-border(15px,0);
 
     ul{
         @include flex-justify($fj-dir:column);

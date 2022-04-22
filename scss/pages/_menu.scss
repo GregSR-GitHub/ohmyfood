@@ -26,7 +26,7 @@
 .menu-backnd{
     width: 100%;
     padding: 0 14px;
-    @include backnd-secondary;
+    @include version-maxw(desktop,auto);
 }
 
 .menu-title{

@@ -179,10 +179,6 @@ html {
   font-size: 16px;
 }
 
-* {
-  box-sizing: border-box;
-}
-
 h1 {
   font-size: 1.5rem;
   font-weight: 500;
@@ -192,9 +188,24 @@ p {
   font-weight: 300;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 a {
   text-decoration: none;
   color: #000;
+}
+
+.background-secondary {
+  background-color: #f6f6f6;
+}
+@media screen and (min-width: 993px) {
+  .background-secondary {
+    max-width: 992px;
+    margin: 0 auto;
+    box-shadow: 0px 4px 12px #d9d9d9;
+  }
 }
 
 .heart {
@@ -430,14 +441,11 @@ header img {
 .menu-backnd {
   width: 100%;
   padding: 0 14px;
-  background-color: #f6f6f6;
 }
 @media screen and (min-width: 993px) {
   .menu-backnd {
     max-width: 992px;
     margin: 0 auto;
-    box-shadow: 0px 4px 12px #d9d9d9;
-    border-radius: 0 0 0 0;
   }
 }
 

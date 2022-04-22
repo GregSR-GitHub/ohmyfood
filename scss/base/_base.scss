@@ -7,10 +7,6 @@ html {
     font-size: $fonts-base;
 }
 
-*{
-    box-sizing: border-box;
-}
-
 h1{
     font-size: $fonts-big;
     font-weight: 500;
@@ -18,9 +14,4 @@ h1{
 
 p{
     font-weight: 300;
-}
-
-a{
-    text-decoration: none;
-    color: $color-font-primary;
 }
