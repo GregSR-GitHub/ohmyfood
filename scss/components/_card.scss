@@ -26,13 +26,14 @@
         @include semi-squircle(100%,77px,0,15px);
         position: relative;
         background-color: $color-backgnd-primary;
-        padding: 14px;
+        padding: 10px 14px;
         
         h2,p{
-            margin: 4px 0;
+            margin: 7px 0;
         }
         h2{
             font-weight: bold;
+            font-size: $fonts-lightmedium;
         }
     }
 }
@@ -45,6 +46,6 @@
         right: 11px;
         background-color: $color-tertiary;
         color: $color-font-new;
-        font-size: 14px;
+        font-size: $fonts-small;
     }
 }

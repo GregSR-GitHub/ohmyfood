@@ -28,10 +28,13 @@ $shadow-meal: 0px 2px 6px $color-shadow-secondary;
 $border-loading-circle: 3px $color-primary solid;
 
 // Font Size //
-$fonts-normal: 1em;
-$fonts-big: 1.5em;
-$fonts-small: 0.9em;
-$fonts-meal-txt: 0.9em;
+$fonts-base: 16px;
+$fonts-small: 0.9rem;
+$fonts-normal: 1rem;
+$fonts-lightmedium: 1.1rem;
+$fonts-medium: 1.2rem;
+$fonts-big: 1.5rem;
+$fonts-menu-title: 1.8rem;
 
 // Images //
 $menu-01: 'lapalettedugout';

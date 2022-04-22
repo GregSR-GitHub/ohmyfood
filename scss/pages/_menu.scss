@@ -32,8 +32,12 @@
 .menu-title{
     position: relative;
     padding-bottom: 14px;
-    font-family: 'Shrikhand', cursive;
     @include version-maxw(tablet,auto);
+
+    h1{
+        font-family: 'Shrikhand', cursive;
+        font-size: $fonts-menu-title; 
+    }
 
     .heart{
         top: 0px;

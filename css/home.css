@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
 @-webkit-keyframes loading-visibility {
   99% {
     opacity: 0;
@@ -176,7 +176,7 @@ table {
 
 html {
   font-family: "Roboto", Verdana, sans-serif;
-  font-size: 1em;
+  font-size: 16px;
 }
 
 * {
@@ -184,7 +184,8 @@ html {
 }
 
 h1 {
-  font-size: 1.5em;
+  font-size: 1.5rem;
+  font-weight: 500;
 }
 
 p {
@@ -272,7 +273,8 @@ a {
 }
 .steps h2 {
   flex: 1;
-  font-size: 1em;
+  font-size: 1rem;
+  font-weight: 500;
 }
 @media screen and (min-width: 769px) {
   .steps h2 {
@@ -319,7 +321,7 @@ a {
     position: absolute;
     left: 50%;
     top: -25px;
-    font-size: 1.5em;
+    font-size: 1.5rem;
     transform: translateX(-50%);
     background-color: #fff;
     border: 3px #f6f6f6 solid;
@@ -345,7 +347,7 @@ a {
   border-radius: 12px;
   background-color: #9356DC;
   color: #fff;
-  font-size: 14px;
+  font-size: 0.9rem;
 }
 
 .card {
@@ -383,13 +385,14 @@ a {
   border-radius: 0 0 15px 15px;
   position: relative;
   background-color: #fff;
-  padding: 14px;
+  padding: 10px 14px;
 }
 .card__infos h2, .card__infos p {
-  margin: 4px 0;
+  margin: 7px 0;
 }
 .card__infos h2 {
   font-weight: bold;
+  font-size: 1.1rem;
 }
 
 .new::after {
@@ -406,7 +409,7 @@ a {
   right: 11px;
   background-color: #99E2D0;
   color: #278870;
-  font-size: 14px;
+  font-size: 0.9rem;
 }
 
 .loading {
@@ -540,7 +543,6 @@ header img {
 .home-title {
   width: 100%;
   max-width: 400px;
-  font-weight: bold;
   margin: 10px 0;
 }
 @media screen and (min-width: 769px) {
@@ -551,6 +553,7 @@ header img {
 
 .explore {
   background-color: #f6f6f6;
+  text-align: center;
 }
 @media screen and (min-width: 993px) {
   .explore {
@@ -566,13 +569,10 @@ header img {
   border-radius: 25px;
 }
 .explore h1 {
-  text-align: center;
-  margin: 0px 22px;
-  font-weight: bold;
+  margin: 0px 26px;
 }
 .explore p {
-  font-size: 1.2em;
-  text-align: center;
+  font-size: 1.2rem;
   margin: 22px 0;
 }
 
@@ -613,7 +613,9 @@ footer {
 }
 footer h1 {
   font-family: "Shrikhand", cursive;
-  font-size: 20px;
+  font-weight: 400;
+  font-size: 1.2rem;
+  margin-bottom: 12px;
 }
 footer ul {
   display: flex;

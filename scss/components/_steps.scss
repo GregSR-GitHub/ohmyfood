@@ -10,7 +10,8 @@
 
     h2{
         flex:1;
-        font-size: 1em;
+        font-size: $fonts-normal;
+        font-weight: 500;
         @include version(tablet) {
             margin: 0 20px;
             text-align: center;
@@ -44,12 +45,12 @@
     @include version(tablet) {
         @include squircle(50px,50px,15px);
         @include absolute-left(50%,-25px);
-        font-size: 1.5em;
+        font-size: $fonts-big;
         transform: translateX(-50%);
         background-color: $color-backgnd-primary;
         border: 3px $color-backgnd-secondary solid;
     }
-    
+
     &--third{
         color: $color-primary;    
         @include version(tablet) {
@@ -64,5 +65,5 @@
     @include circle(24px);
     background-color: $color-primary;
     color: $color-font-secondary;
-    font-size: 14px;
+    font-size: $fonts-small;
 }

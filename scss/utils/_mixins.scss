@@ -76,10 +76,12 @@
     @include border-radius-topbot($brtop, $brbot);
 }
 
-@mixin ellipsis{
+@mixin ellipsis($fsize){
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    font-size: $fsize;
+    line-height: calc($fsize *1.1);
 }
 
 // Responsive //

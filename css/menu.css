@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
 @-webkit-keyframes loading-visibility {
   99% {
     opacity: 0;
@@ -176,7 +176,7 @@ table {
 
 html {
   font-family: "Roboto", Verdana, sans-serif;
-  font-size: 1em;
+  font-size: 16px;
 }
 
 * {
@@ -184,7 +184,8 @@ html {
 }
 
 h1 {
-  font-size: 1.5em;
+  font-size: 1.5rem;
+  font-weight: 500;
 }
 
 p {
@@ -307,17 +308,20 @@ a {
   transition: all 500ms;
 }
 .meal__infos h3 {
-  font-weight: bold;
+  font-weight: 500;
   margin-bottom: 6px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  font-size: 1.1rem;
+  line-height: 1.21rem;
 }
 .meal__infos p {
-  font-size: 0.9em;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  font-size: 0.9rem;
+  line-height: 0.99rem;
 }
 
 .meal__end {
@@ -335,9 +339,9 @@ a {
 .meal__end__price {
   width: 50px;
   padding: 36px 10px 10px 5px;
-  font-size: 0.9em;
+  font-size: 0.9rem;
   text-align: center;
-  font-weight: bold;
+  font-weight: 500;
 }
 .meal__end__valid {
   display: flex;
@@ -440,13 +444,16 @@ header img {
 .menu-title {
   position: relative;
   padding-bottom: 14px;
-  font-family: "Shrikhand", cursive;
 }
 @media screen and (min-width: 769px) {
   .menu-title {
     max-width: 875px;
     margin: 0 auto;
   }
+}
+.menu-title h1 {
+  font-family: "Shrikhand", cursive;
+  font-size: 1.8rem;
 }
 .menu-title .heart {
   top: 0px;
@@ -532,7 +539,9 @@ footer {
 }
 footer h1 {
   font-family: "Shrikhand", cursive;
-  font-size: 20px;
+  font-weight: 400;
+  font-size: 1.2rem;
+  margin-bottom: 12px;
 }
 footer ul {
   display: flex;

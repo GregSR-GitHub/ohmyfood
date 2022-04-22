@@ -8,7 +8,6 @@
 .home-title{
     @include mobile-maxw;
     @include version-maxw(tablet);
-    font-weight: bold;
     margin: 10px 0;
 }
 
@@ -16,20 +15,17 @@
 
 .explore{
     @include backnd-secondary(0,15px);
-
+    text-align: center;
     a{
         @include circle(218px,$btn-height);
     }
 
     h1{
-        text-align: center;
-        margin: 0px 22px;
-        font-weight: bold;
+        margin: 0px 26px;
     }
     
     p{
-        font-size: 1.2em;
-        text-align: center;
+        font-size: $fonts-medium;
         margin: 22px 0;
     }
 }

@@ -1,10 +1,10 @@
 //Bases
 @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
 html {
     font-family: 'Roboto', Verdana, sans-serif;
-    font-size: $fonts-normal;
+    font-size: $fonts-base;
 }
 
 *{
@@ -13,6 +13,7 @@ html {
 
 h1{
     font-size: $fonts-big;
+    font-weight: 500;
 }
 
 p{
