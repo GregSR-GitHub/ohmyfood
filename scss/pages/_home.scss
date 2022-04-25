@@ -8,6 +8,8 @@
 .home-title{
     @include mobile-maxw;
     @include version-maxw(tablet);
+    font-size: $fonts-big;
+    font-weight: 500;
     margin: 10px 0;
 }
 

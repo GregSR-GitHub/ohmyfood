@@ -5,20 +5,26 @@ footer{
     background-color: $color-backgnd-tertiary;
     color: $color-font-secondary;
     padding: 25px 6%;
+    @include version(tablet) {
+        align-items: center;
+    }
 
-    h1{
+    h2{
         font-family: 'Shrikhand', cursive;
         font-weight: 400;
         font-size: $fonts-medium;
         margin-bottom: 12px;
+        @include version(tablet) {
+            text-align: center;
+        }
     }
 
     ul{
         @include flex-column;
-        @include version-maxw(tablet) {
-            flex-flow: row wrap;
+        @include version(tablet) {
+            flex-direction: row;
             justify-content: space-between;
-            max-width: 600px;
+            width: 600px;
         }
     }
 

@@ -228,7 +228,6 @@ a {
   position: absolute;
   padding: 1px;
   color: #fff;
-  background-color: #fff;
   background-image: linear-gradient(#9356DC, #FF79DA);
   -webkit-background-clip: text;
           background-clip: text;
@@ -279,13 +278,13 @@ a {
     justify-content: space-between;
   }
 }
-.steps h2 {
+.steps h3 {
   flex: 1;
   font-size: 1rem;
   font-weight: 500;
 }
 @media screen and (min-width: 769px) {
-  .steps h2 {
+  .steps h3 {
     margin: 0 20px;
     text-align: center;
   }
@@ -395,10 +394,10 @@ a {
   background-color: #fff;
   padding: 10px 14px;
 }
-.card__infos h2, .card__infos p {
+.card__infos h3, .card__infos p {
   margin: 7px 0;
 }
-.card__infos h2 {
+.card__infos h3 {
   font-weight: bold;
   font-size: 1.1rem;
 }
@@ -551,6 +550,8 @@ header img {
 .home-title {
   width: 100%;
   max-width: 400px;
+  font-size: 1.5rem;
+  font-weight: 500;
   margin: 10px 0;
 }
 @media screen and (min-width: 769px) {
@@ -613,11 +614,21 @@ footer {
   color: #fff;
   padding: 25px 6%;
 }
-footer h1 {
+@media screen and (min-width: 769px) {
+  footer {
+    align-items: center;
+  }
+}
+footer h2 {
   font-family: "Shrikhand", cursive;
   font-weight: 400;
   font-size: 1.2rem;
   margin-bottom: 12px;
+}
+@media screen and (min-width: 769px) {
+  footer h2 {
+    text-align: center;
+  }
 }
 footer ul {
   display: flex;
@@ -625,10 +636,9 @@ footer ul {
 }
 @media screen and (min-width: 769px) {
   footer ul {
-    max-width: 875px;
-    flex-flow: row wrap;
+    flex-direction: row;
     justify-content: space-between;
-    max-width: 600px;
+    width: 600px;
   }
 }
 footer li {
