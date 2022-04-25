@@ -5,7 +5,7 @@
     @include squircle(100%,251px,15px);
     position: relative;
     margin: 9px 0;
-    box-shadow: 0px 4px 8px darken($color-backgnd-secondary,10%);
+    box-shadow: $shadow-card;
     max-width: $mobile-width;
     @include version(tablet) {
         width: 48.5%;
@@ -41,7 +41,8 @@
 .new{
     &::after{
         @include squircle(80px,30px,5px);
-        @include afterflex('Nouveau');
+        @include after('Nouveau');
+        @include flex-justify;
         top: 11px;
         right: 11px;
         background-color: $color-tertiary;

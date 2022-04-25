@@ -35,18 +35,10 @@
     }
 }
 
-@mixin after($z:2){
+@mixin after($cont:'',$z:2){
     position: absolute;
-    display: block;
-    content: '';
-    z-index:$z;
-}
-
-@mixin afterflex($cont:''){
-    position: absolute;
-    @include flex-justify;
     content: $cont;
-    z-index: 2;
+    z-index:$z;
 }
 
 // Shaping //

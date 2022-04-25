@@ -23,7 +23,7 @@ $color-shadow-secondary: darken($color-backgnd-secondary,10%);
 $shadow-header: 0px 3px 3px darken($color-backgnd-quaternary, 10%);
 $shadow-location: inset $shadow-header;
 $shadow-home: 0px 4px 12px darken($color-backgnd-primary,15%);
-$shadow-card: 0px 4px 8px $color-shadow-secondary;
+$shadow-card: 0px 4px 8px darken($color-backgnd-secondary,10%);
 $shadow-meal: 0px 2px 6px $color-shadow-secondary;
 $border-loading-circle: 3px $color-primary solid;
 

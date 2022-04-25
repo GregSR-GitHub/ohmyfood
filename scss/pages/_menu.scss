@@ -9,6 +9,7 @@
     &::after{
         @include semi-squircle(100%,35px,38px,0);
         @include after;
+        display: block;
         bottom: 0;
         left:50%;
         transform: translate(-50%,0);
