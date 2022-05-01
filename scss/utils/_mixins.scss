@@ -43,7 +43,6 @@
 
 // Shaping //
 
-
 @mixin square($dimx,$dimy:$dimx){
     width: $dimx;
     height: $dimy;

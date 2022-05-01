@@ -14,12 +14,14 @@ header{
 // Home page //
 
 .header--shadow{
-    box-shadow: $shadow-header;
+    @include version(tablet) {
+        box-shadow: $shadow-header;
+    }
 }
 
 // Menu pages //
 
-.retour{
+.return{
     @include absolute-left(18px);
     margin-top: 10px;
     font-size: 20px;

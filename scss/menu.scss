@@ -1,20 +1,20 @@
-//Variable, Mixin & Placeholder//
+// Variables, Mixins & Keyframes //
 @import "./utils/variables";
 @import "./utils/mixins";
 @import "./utils/keyframes";
 
-//Bases
+// Bases //
 @import "./base/reset";
 @import "./base/typography";
 @import "./base/general";
 
-//Components//
+// Components //
 @import "./components/heart";
 @import "./components/btn";
 @import "./components/mealtype";
 @import "./components/meal";
 
-//Header//
+// Header //
 @import "./layouts/header";
 
 // Home page //
